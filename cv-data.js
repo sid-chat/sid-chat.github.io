@@ -7,7 +7,7 @@ window.CV_DATA = {
   role: "PhD candidate,\nArtificial Cognitive Systems lab,\nDonders Institute,\nRadboud University",
   location: "",
   shortSummary:
-    "Complex Adaptive Systems,\nAgent-based Models,\nCollective & Diverse Intelligence",
+    "Complex Adaptive Systems,\nAgent-based Models,\nCollective & Diverse Intelligence, \nJAX",
   about:
     "Namaste and welcome to my website. I develop computational models and software to understand complex adaptive systems. Currently, in my PhD project, I work with agent-based models with many agents. My goal is to better our understanding of collective and diverse intelligence in its embodied form using these models. I am supervised by prof. Marcel van Gerven in the project.",
 
