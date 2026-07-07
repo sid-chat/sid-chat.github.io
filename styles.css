@@ -83,8 +83,8 @@ body {
    Works with: <img class="avatar" src="images/profile.jpg" alt="Photo of Siddharth Chaturvedi" />
 */
 .avatar {
-  width: 280px;
-  height: 280px;
+  width: 150px;
+  height: 150px;
   max-width: 100%;
   display: block;
   border-radius: 50%;
