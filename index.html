@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title id="page-title">Academic CV</title>
+    <meta name="description" content="Personal academic CV and research portfolio." />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <div class="page">
+      <aside class="sidebar" aria-label="Profile summary">
+        <div class="profile-card">
+          <div class="avatar" id="avatar" aria-hidden="true">SC</div>
+          <h1 id="name">Your Name</h1>
+          <p class="role" id="role">Your role</p>
+          <p class="location" id="location"></p>
+          <p class="summary" id="summary"></p>
+          <div class="links" id="links"></div>
+        </div>
+
+        <section class="side-section" id="keywords-section">
+          <h2>Research keywords</h2>
+          <div class="tags" id="keywords"></div>
+        </section>
+
+        <section class="side-section" id="contact-section">
+          <h2>Contact</h2>
+          <div id="contact"></div>
+        </section>
+      </aside>
+
+      <main id="main" class="content">
+        <nav class="top-nav" aria-label="Page sections">
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#publications">Publications</a>
+          <a href="#talks">Talks</a>
+          <a href="#software">Software</a>
+          <a href="#education">Education</a>
+        </nav>
+
+        <section id="about" class="section">
+          <h2>About</h2>
+          <p id="about-text"></p>
+        </section>
+
+        <section id="interests" class="section">
+          <h2>Research interests</h2>
+          <ul class="compact-list" id="interests-list"></ul>
+        </section>
+
+        <section id="projects" class="section">
+          <h2>Selected projects</h2>
+          <div class="cards" id="projects-list"></div>
+        </section>
+
+        <section id="publications" class="section">
+          <h2>Publications</h2>
+          <div class="timeline" id="publications-list"></div>
+        </section>
+
+        <section id="talks" class="section">
+          <h2>Talks, tutorials & workshops</h2>
+          <div class="timeline" id="talks-list"></div>
+        </section>
+
+        <section id="software" class="section">
+          <h2>Software</h2>
+          <div class="cards" id="software-list"></div>
+        </section>
+
+        <section id="education" class="section">
+          <h2>Education</h2>
+          <div class="timeline" id="education-list"></div>
+        </section>
+
+        <section id="service" class="section">
+          <h2>Service & community</h2>
+          <div class="timeline" id="service-list"></div>
+        </section>
+
+        <footer class="footer">
+          <span id="footer-name">Your Name</span>
+          <span>·</span>
+          <button type="button" class="print-button" onclick="window.print()">Print / save as PDF</button>
+        </footer>
+      </main>
+    </div>
+
+    <script src="cv-data.js"></script>
+    <script>
+      const data = window.CV_DATA || {};
+      const byId = (id) => document.getElementById(id);
+
+      function setText(id, value) {
+        const el = byId(id);
+        if (el) el.textContent = value || "";
+      }
+
+      function hideIfEmpty(sectionId, value) {
+        const el = byId(sectionId);
+        if (!el) return;
+        const empty = !value || (Array.isArray(value) && value.length === 0);
+        if (empty) el.hidden = true;
+      }
+
+      function link(label, url) {
+        if (!url) return "";
+        const a = document.createElement("a");
+        a.href = url;
+        a.textContent = label;
+        if (!url.startsWith("mailto:") && !url.startsWith("#")) {
+          a.target = "_blank";
+          a.rel = "noreferrer";
+        }
+        return a;
+      }
+
+      function renderLinks() {
+        const container = byId("links");
+        const links = data.links || [];
+        container.innerHTML = "";
+        links.forEach((item) => {
+          const a = link(item.label, item.url);
+          if (a) container.appendChild(a);
+        });
+      }
+
+      function renderTags(id, items) {
+        const container = byId(id);
+        container.innerHTML = "";
+        (items || []).forEach((item) => {
+          const span = document.createElement("span");
+          span.className = "tag";
+          span.textContent = item;
+          container.appendChild(span);
+        });
+      }
+
+      function renderList(id, items) {
+        const container = byId(id);
+        container.innerHTML = "";
+        (items || []).forEach((item) => {
+          const li = document.createElement("li");
+          li.textContent = item;
+          container.appendChild(li);
+        });
+      }
+
+      function renderCards(id, items) {
+        const container = byId(id);
+        container.innerHTML = "";
+        (items || []).forEach((item) => {
+          const article = document.createElement("article");
+          article.className = "card";
+
+          const title = document.createElement("h3");
+          title.textContent = item.name || item.title || "Untitled";
+          article.appendChild(title);
+
+          if (item.meta) {
+            const meta = document.createElement("p");
+            meta.className = "meta";
+            meta.textContent = item.meta;
+            article.appendChild(meta);
+          }
+
+          if (item.description) {
+            const desc = document.createElement("p");
+            desc.textContent = item.description;
+            article.appendChild(desc);
+          }
+
+          if (item.tags && item.tags.length) {
+            const tags = document.createElement("div");
+            tags.className = "mini-tags";
+            item.tags.forEach((tag) => {
+              const span = document.createElement("span");
+              span.textContent = tag;
+              tags.appendChild(span);
+            });
+            article.appendChild(tags);
+          }
+
+          if (item.link) {
+            const a = link(item.linkLabel || "Link", item.link);
+            if (a) {
+              a.className = "text-link";
+              article.appendChild(a);
+            }
+          }
+
+          container.appendChild(article);
+        });
+      }
+
+      function renderTimeline(id, items) {
+        const container = byId(id);
+        container.innerHTML = "";
+        (items || []).forEach((item) => {
+          const article = document.createElement("article");
+          article.className = "timeline-item";
+
+          const year = document.createElement("div");
+          year.className = "year";
+          year.textContent = item.year || "";
+          article.appendChild(year);
+
+          const body = document.createElement("div");
+          body.className = "timeline-body";
+
+          const title = document.createElement("h3");
+          title.textContent = item.title || item.name || "Untitled";
+          body.appendChild(title);
+
+          if (item.venue || item.meta) {
+            const meta = document.createElement("p");
+            meta.className = "meta";
+            meta.textContent = item.venue || item.meta;
+            body.appendChild(meta);
+          }
+
+          if (item.description) {
+            const desc = document.createElement("p");
+            desc.textContent = item.description;
+            body.appendChild(desc);
+          }
+
+          if (item.link) {
+            const a = link(item.linkLabel || "Link", item.link);
+            if (a) {
+              a.className = "text-link";
+              body.appendChild(a);
+            }
+          }
+
+          article.appendChild(body);
+          container.appendChild(article);
+        });
+      }
+
+      function renderContact() {
+        const container = byId("contact");
+        container.innerHTML = "";
+        (data.contact || []).forEach((item) => {
+          const p = document.createElement("p");
+          const label = document.createElement("strong");
+          label.textContent = item.label + ": ";
+          p.appendChild(label);
+          const a = item.url ? link(item.value, item.url) : null;
+          if (a) p.appendChild(a);
+          else p.appendChild(document.createTextNode(item.value || ""));
+          container.appendChild(p);
+        });
+      }
+
+      function init() {
+        document.title = data.name ? `${data.name} — CV` : "Academic CV";
+        setText("name", data.name);
+        setText("role", data.role);
+        setText("location", data.location);
+        setText("summary", data.shortSummary);
+        setText("about-text", data.about);
+        setText("footer-name", data.name);
+        setText("avatar", data.initials || "CV");
+
+        renderLinks();
+        renderTags("keywords", data.keywords);
+        renderContact();
+        renderList("interests-list", data.interests);
+        renderCards("projects-list", data.projects);
+        renderTimeline("publications-list", data.publications);
+        renderTimeline("talks-list", data.talks);
+        renderCards("software-list", data.software);
+        renderTimeline("education-list", data.education);
+        renderTimeline("service-list", data.service);
+
+        hideIfEmpty("keywords-section", data.keywords);
+        hideIfEmpty("contact-section", data.contact);
+      }
+
+      init();
+    </script>
+  </body>
+</html>
