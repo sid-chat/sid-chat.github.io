@@ -14,6 +14,10 @@
     <div class="page">
       <aside class="sidebar" aria-label="Profile summary">
         <div class="profile-card">
+          <div class="links" id="links" aria-label="Profile links"></div>
+          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+            🌙 Dark mode
+          </button>
           <img class="avatar" src="media/git_pic.jpg" alt="Photo of Siddharth Chaturvedi" />
           <h1 id="name">Your Name</h1>
           <p class="role" id="role">Your role</p>
@@ -285,5 +289,38 @@
 
       init();
     </script>
+    <script>
+      const themeToggle = document.getElementById("theme-toggle");
+
+      function applyTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+
+      if (themeToggle) {
+        themeToggle.textContent = theme === "dark" ? "☀️ Light mode" : "🌙 Dark mode";
+        themeToggle.setAttribute(
+          "aria-label",
+          theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+          );
+        }
+      }
+
+    const savedTheme = localStorage.getItem("theme");
+    const prefersDark =
+      window.matchMedia &&
+      window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+
+    applyTheme(initialTheme);
+
+    if (themeToggle) {
+      themeToggle.addEventListener("click", () => {
+        const currentTheme =
+        document.documentElement.getAttribute("data-theme") || "light";
+
+      applyTheme(currentTheme === "dark" ? "light" : "dark");
+    });
+    }
+  </script>
   </body>
 </html>
