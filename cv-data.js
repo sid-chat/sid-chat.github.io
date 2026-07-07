@@ -18,7 +18,7 @@ window.CV_DATA = {
     { label: "CV PDF", url: "#" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/siddharth-chaturvedi-a06471118/" },
     { label: "BlueSky", url: "@ssc842h.bsky.social"},
-    { label: "X", url: ""}
+    { label: "X", url: "#"}
   ],
 
   contact: [
