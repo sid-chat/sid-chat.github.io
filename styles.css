@@ -79,8 +79,8 @@ body {
 }
 
 .avatar {
-  width: 92px;
-  height: 92px;
+  width: 184px;
+  height: 184px;
   display: block;
   border-radius: 50%;
   object-fit: cover;
