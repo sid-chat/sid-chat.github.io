@@ -4,11 +4,10 @@
 window.CV_DATA = {
   name: "Siddharth Chaturvedi",
   initials: "SC",
-  role: "PhD researcher · Complex systems · Agent-based modelling",
+  role: "Complex adaptive systems · Agent-based modelling · Collective & Diverse Intelligence",
   location: "Netherlands",
   shortSummary:
-    "I build computational models and software for studying adaptive, population-changing complex systems.",
-
+    "I build computational models and software to study complex adaptive systems"
   about:
     "I work on agent-based modelling, artificial life, multi-agent systems, and adaptive controllers. My research focuses on systems where the number of entities changes over time: agents are born, die, interact, specialize, and reshape collective dynamics. I am especially interested in scalable simulation frameworks, emergent coordination, role differentiation, and open-ended adaptation.",
 
