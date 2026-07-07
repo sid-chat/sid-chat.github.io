@@ -7,23 +7,31 @@ window.CV_DATA = {
   role: "PhD candidate at Artificial Cognitive Systems lab, Donders Institute, Radboud University",
   location: "Nijmegen, Netherlands",
   shortSummary:
-    "I build computational models and software to study complex adaptive systems focused on collective and diverse intelligence"
+    "I build computational models and software to study complex adaptive systems, focused on collective and diverse intelligence.",
   about:
-    "Namaste and welcome, ",
+    "Namaste and welcome. I work on computational models of complex adaptive systems, with a focus on agent-based modelling, artificial life, collective intelligence, and scalable simulation software.",
 
   links: [
-    { label: "Email", url: "mailto:siddharth.chaturvedi@donders.ru.nl },
+    { label: "Email", url: "mailto:siddharth.chaturvedi@donders.ru.nl" },
     { label: "GitHub", url: "https://github.com/i-m-iron-man" },
     { label: "Google Scholar", url: "https://scholar.google.com/citations?user=adwoK0MAAAAJ&hl=en" },
     { label: "CV PDF", url: "#" },
     { label: "LinkedIn", url: "https://www.linkedin.com/in/siddharth-chaturvedi-a06471118/" },
-    { label: "BlueSky", url: "@ssc842h.bsky.social"},
-    { label: "X", url: "#"}
+    { label: "BlueSky", url: "https://bsky.app/profile/ssc842h.bsky.social" },
+    { label: "X", url: "#" }
   ],
 
   contact: [
-    { label: "Email", value: "your.email@example.com", url: "mailto:your.email@example.com" },
-    { label: "GitHub", value: "github.com/i-m-iron-man", url: "https://github.com/i-m-iron-man" }
+    {
+      label: "Email",
+      value: "siddharth.chaturvedi@donders.ru.nl",
+      url: "mailto:siddharth.chaturvedi@donders.ru.nl"
+    },
+    {
+      label: "GitHub",
+      value: "github.com/i-m-iron-man",
+      url: "https://github.com/i-m-iron-man"
+    }
   ],
 
   keywords: [
@@ -86,7 +94,8 @@ window.CV_DATA = {
       year: "2026",
       title: "Complex systems paper in the GECCO Complex Systems track",
       venue: "GECCO 2026",
-      description: "Replace this placeholder with the exact paper title, authors, and proceedings link.",
+      description:
+        "Replace this placeholder with the exact paper title, authors, and proceedings link.",
       link: "#",
       linkLabel: "Add link"
     }
@@ -121,7 +130,8 @@ window.CV_DATA = {
       year: "Present",
       title: "PhD research",
       venue: "Complex systems, agent-based modelling, and artificial life",
-      description: "Add university, lab, supervisor, and dissertation title when ready."
+      description:
+        "Add university, lab, supervisor, and dissertation title when ready."
     }
   ],
 
@@ -130,7 +140,8 @@ window.CV_DATA = {
       year: "2024",
       title: "PON PhD Day organization",
       venue: "PhD Organization Nijmegen",
-      description: "Organized community and academic events for PhD researchers."
+      description:
+        "Organized community and academic events for PhD researchers."
     }
   ]
 };
