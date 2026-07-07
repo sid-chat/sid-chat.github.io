@@ -7,9 +7,9 @@ window.CV_DATA = {
   role: "PhD candidate,\nArtificial Cognitive Systems lab,\nDonders Institute,\nRadboud University",
   location: "",
   shortSummary:
-    "Complex Adaptive Systems,\nAgent-based Models,\nCollective & Diverse intelligence",
+    "Complex Adaptive Systems,\nAgent-based Models,\nCollective & Diverse Intelligence",
   about:
-    "Namaste and welcome. I work on computational models of complex adaptive systems, with a focus on agent-based modelling, artificial life, collective intelligence, and scalable simulation software.",
+    "Namaste and welcome to my website. I develop computational models and software to understand complex adaptive systems. Currently, in my PhD project, I work with agent-based models with many agents. My goal is to better our understanding of collective and diverse intelligence in its embodied form using these models. I am supervised by prof. Marcel van Gerven in the project.",
 
   links: [
     { label: "Email", url: "mailto:siddharth.chaturvedi@donders.ru.nl" },
