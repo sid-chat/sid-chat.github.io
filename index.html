@@ -8,22 +8,25 @@
     <link rel="icon" href="favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
   </head>
+
   <body>
+    <button class="theme-toggle floating-theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+      🌙 Dark mode
+    </button>
+
     <a class="skip-link" href="#main">Skip to content</a>
 
     <div class="page">
       <aside class="sidebar" aria-label="Profile summary">
         <div class="profile-card">
-          <div class="links" id="links" aria-label="Profile links"></div>
-          <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
-            🌙 Dark mode
-          </button>
           <img class="avatar" src="media/git_pic.jpg" alt="Photo of Siddharth Chaturvedi" />
+
           <h1 id="name">Your Name</h1>
           <p class="role" id="role">Your role</p>
           <p class="location" id="location"></p>
           <p class="summary" id="summary"></p>
-          <div class="links" id="links"></div>
+
+          <div class="links" id="links" aria-label="Profile links"></div>
         </div>
 
         <section class="side-section" id="keywords-section">
@@ -40,6 +43,7 @@
       <main id="main" class="content">
         <nav class="top-nav" aria-label="Page sections">
           <a href="#about">About</a>
+          <a href="#interests">Interests</a>
           <a href="#projects">Projects</a>
           <a href="#publications">Publications</a>
           <a href="#talks">Talks</a>
@@ -96,6 +100,7 @@
     </div>
 
     <script src="cv-data.js"></script>
+
     <script>
       const data = window.CV_DATA || {};
       const byId = (id) => document.getElementById(id);
@@ -113,7 +118,7 @@
       }
 
       function link(label, url) {
-        if (!url) return "";
+        if (!url || url === "#") return "";
         const a = document.createElement("a");
         a.href = url;
         a.textContent = label;
@@ -127,6 +132,7 @@
       function renderLinks() {
         const container = byId("links");
         const links = data.links || [];
+        if (!container) return;
         container.innerHTML = "";
         links.forEach((item) => {
           const a = link(item.label, item.url);
@@ -136,6 +142,7 @@
 
       function renderTags(id, items) {
         const container = byId(id);
+        if (!container) return;
         container.innerHTML = "";
         (items || []).forEach((item) => {
           const span = document.createElement("span");
@@ -147,6 +154,7 @@
 
       function renderList(id, items) {
         const container = byId(id);
+        if (!container) return;
         container.innerHTML = "";
         (items || []).forEach((item) => {
           const li = document.createElement("li");
@@ -157,6 +165,7 @@
 
       function renderCards(id, items) {
         const container = byId(id);
+        if (!container) return;
         container.innerHTML = "";
         (items || []).forEach((item) => {
           const article = document.createElement("article");
@@ -204,6 +213,7 @@
 
       function renderTimeline(id, items) {
         const container = byId(id);
+        if (!container) return;
         container.innerHTML = "";
         (items || []).forEach((item) => {
           const article = document.createElement("article");
@@ -249,6 +259,7 @@
 
       function renderContact() {
         const container = byId("contact");
+        if (!container) return;
         container.innerHTML = "";
         (data.contact || []).forEach((item) => {
           const p = document.createElement("p");
@@ -270,7 +281,6 @@
         setText("summary", data.shortSummary);
         setText("about-text", data.about);
         setText("footer-name", data.name);
-        setText("avatar", data.initials || "CV");
 
         renderLinks();
         renderTags("keywords", data.keywords);
@@ -289,6 +299,7 @@
 
       init();
     </script>
+
     <script>
       const themeToggle = document.getElementById("theme-toggle");
 
@@ -296,31 +307,30 @@
         document.documentElement.setAttribute("data-theme", theme);
         localStorage.setItem("theme", theme);
 
-      if (themeToggle) {
-        themeToggle.textContent = theme === "dark" ? "☀️ Light mode" : "🌙 Dark mode";
-        themeToggle.setAttribute(
-          "aria-label",
-          theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+        if (themeToggle) {
+          themeToggle.textContent = theme === "dark" ? "☀️ Light mode" : "🌙 Dark mode";
+          themeToggle.setAttribute(
+            "aria-label",
+            theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
           );
         }
       }
 
-    const savedTheme = localStorage.getItem("theme");
-    const prefersDark =
-      window.matchMedia &&
-      window.matchMedia("(prefers-color-scheme: dark)").matches;
-    const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
+      const savedTheme = localStorage.getItem("theme");
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
 
-    applyTheme(initialTheme);
+      applyTheme(initialTheme);
 
-    if (themeToggle) {
-      themeToggle.addEventListener("click", () => {
-        const currentTheme =
-        document.documentElement.getAttribute("data-theme") || "light";
-
-      applyTheme(currentTheme === "dark" ? "light" : "dark");
-    });
-    }
-  </script>
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          const currentTheme =
+            document.documentElement.getAttribute("data-theme") || "light";
+          applyTheme(currentTheme === "dark" ? "light" : "dark");
+        });
+      }
+    </script>
   </body>
 </html>
