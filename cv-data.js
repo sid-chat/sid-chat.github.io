@@ -4,10 +4,10 @@
 window.CV_DATA = {
   name: "Siddharth Chaturvedi",
   initials: "SC",
-  role: "PhD candidate,\nArtificial Cognitive Systems lab,\n Donders Institute,\n Radboud University",
+  role: "PhD candidate,\nArtificial Cognitive Systems lab,\nDonders Institute,\nRadboud University",
   location: "",
   shortSummary:
-    "Complex Adaptive Systems, \nAgent-based Models, \nCollective & Diverse intelligence",
+    "Complex Adaptive Systems,\nAgent-based Models,\nCollective & Diverse intelligence",
   about:
     "Namaste and welcome. I work on computational models of complex adaptive systems, with a focus on agent-based modelling, artificial life, collective intelligence, and scalable simulation software.",
 
