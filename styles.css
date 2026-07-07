@@ -55,7 +55,8 @@ body {
   margin: 0 auto;
   padding: 48px 0 64px;
   display: grid;
-  grid-template-columns: 320px minmax(0, 1fr);
+  /* Wider sidebar so the profile photo has room to grow. */
+  grid-template-columns: 400px minmax(0, 1fr);
   gap: 32px;
 }
 
@@ -78,16 +79,20 @@ body {
   padding: 28px;
 }
 
+/* Profile photo.
+   Works with: <img class="avatar" src="images/profile.jpg" alt="Photo of Siddharth Chaturvedi" />
+*/
 .avatar {
-  width: 368px;
-  height: 368px;
+  width: 280px;
+  height: 280px;
+  max-width: 100%;
   display: block;
   border-radius: 50%;
   object-fit: cover;
   object-position: center;
-  margin-bottom: 18px;
-  border: 3px solid var(--paper);
-  box-shadow: 0 10px 28px rgba(30, 37, 45, 0.14);
+  margin: 0 auto 24px;
+  border: 4px solid var(--paper);
+  box-shadow: 0 12px 32px rgba(30, 37, 45, 0.16);
 }
 
 h1,
@@ -330,6 +335,17 @@ h3 {
   font: inherit;
 }
 
+@media (max-width: 980px) {
+  .page {
+    grid-template-columns: 340px minmax(0, 1fr);
+  }
+
+  .avatar {
+    width: 240px;
+    height: 240px;
+  }
+}
+
 @media (max-width: 860px) {
   .page {
     grid-template-columns: 1fr;
@@ -339,6 +355,11 @@ h3 {
   .sidebar,
   .top-nav {
     position: static;
+  }
+
+  .avatar {
+    width: 220px;
+    height: 220px;
   }
 
   .cards {
@@ -360,6 +381,11 @@ h3 {
   .profile-card,
   .section {
     padding: 22px;
+  }
+
+  .avatar {
+    width: 180px;
+    height: 180px;
   }
 
   .timeline-item {
