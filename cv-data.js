@@ -9,14 +9,16 @@ window.CV_DATA = {
   shortSummary:
     "I build computational models and software to study complex adaptive systems focused on collective and diverse intelligence"
   about:
-    "Namaste and welcome",
+    "Namaste and welcome, ",
 
   links: [
-    { label: "Email", url: "mailto:your.email@example.com" },
+    { label: "Email", url: "mailto:siddharth.chaturvedi@donders.ru.nl },
     { label: "GitHub", url: "https://github.com/i-m-iron-man" },
-    { label: "Google Scholar", url: "#" },
+    { label: "Google Scholar", url: "https://scholar.google.com/citations?user=adwoK0MAAAAJ&hl=en" },
     { label: "CV PDF", url: "#" },
-    { label: "LinkedIn", url: "#" }
+    { label: "LinkedIn", url: "https://www.linkedin.com/in/siddharth-chaturvedi-a06471118/" },
+    { label: "BlueSky", url: "@ssc842h.bsky.social"},
+    { label: "X", url: ""}
   ],
 
   contact: [
