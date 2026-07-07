@@ -13,6 +13,7 @@
   /* Change only this value to resize the profile photo. */
   --avatar-size: 150px;
 }
+
 html[data-theme="dark"] {
   --bg: #10151d;
   --paper: #171f2a;
@@ -23,55 +24,6 @@ html[data-theme="dark"] {
   --accent-soft: #223349;
   --tag: #202a36;
   --shadow: 0 18px 45px rgba(0, 0, 0, 0.28);
-}
-.theme-toggle {
-  width: 100%;
-  margin-top: 18px;
-  padding: 9px 12px;
-  border: 1px solid var(--line);
-  border-radius: 999px;
-  background: var(--paper);
-  color: var(--accent);
-  font: inherit;
-  font-weight: 700;
-  cursor: pointer;
-  transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
-}
-
-.theme-toggle:hover {
-  transform: translateY(-1px);
-  border-color: rgba(23, 74, 124, 0.35);
-}
-
-html[data-theme="dark"] body {
-  background:
-    radial-gradient(circle at top left, rgba(143, 189, 242, 0.12), transparent 32rem),
-    var(--bg);
-}
-
-html[data-theme="dark"] .profile-card,
-html[data-theme="dark"] .side-section,
-html[data-theme="dark"] .section {
-  background: rgba(23, 31, 42, 0.9);
-}
-
-html[data-theme="dark"] .card {
-  background: rgba(255, 255, 255, 0.035);
-}
-
-html[data-theme="dark"] .links a,
-html[data-theme="dark"] .top-nav a,
-html[data-theme="dark"] .theme-toggle {
-  background: rgba(23, 31, 42, 0.92);
-}
-
-html[data-theme="dark"] .top-nav {
-  background: linear-gradient(to bottom, var(--bg) 65%, rgba(16, 21, 29, 0));
-}
-
-html[data-theme="dark"] .tag,
-html[data-theme="dark"] .mini-tags span {
-  color: var(--ink);
 }
 
 * {
@@ -94,6 +46,12 @@ body {
   line-height: 1.65;
 }
 
+html[data-theme="dark"] body {
+  background:
+    radial-gradient(circle at top left, rgba(143, 189, 242, 0.12), transparent 32rem),
+    var(--bg);
+}
+
 ::selection {
   background: var(--accent-soft);
 }
@@ -111,6 +69,37 @@ body {
 
 .skip-link:focus {
   top: 1rem;
+}
+
+.theme-toggle {
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--accent);
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-1px);
+  border-color: rgba(23, 74, 124, 0.35);
+}
+
+.floating-theme-toggle {
+  position: fixed;
+  top: 18px;
+  right: 18px;
+  z-index: 1000;
+  width: auto;
+  margin: 0;
+}
+
+html[data-theme="dark"] .theme-toggle {
+  background: rgba(23, 31, 42, 0.96);
 }
 
 .page {
@@ -137,13 +126,19 @@ body {
   box-shadow: var(--shadow);
 }
 
+html[data-theme="dark"] .profile-card,
+html[data-theme="dark"] .side-section,
+html[data-theme="dark"] .section {
+  background: rgba(23, 31, 42, 0.9);
+}
+
 .profile-card {
   padding: 28px;
 }
 
 /* Profile photo.
    Works with:
-   <img class="avatar" src="images/profile.jpg" alt="Photo of Siddharth Chaturvedi" />
+   <img class="avatar" src="media/git_pic.jpg" alt="Photo of Siddharth Chaturvedi" />
 */
 .profile-card img.avatar,
 .avatar {
@@ -199,11 +194,14 @@ h3 {
 }
 
 .location,
-.summary{
-  white-space: pre-line;
-},
+.summary,
 .meta {
   color: var(--muted);
+}
+
+.summary,
+#about-text {
+  white-space: pre-line;
 }
 
 .summary {
@@ -231,6 +229,11 @@ h3 {
   border-radius: 999px;
   background: var(--paper);
   transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+}
+
+html[data-theme="dark"] .links a,
+html[data-theme="dark"] .top-nav a {
+  background: rgba(23, 31, 42, 0.92);
 }
 
 .links a:hover,
@@ -268,6 +271,11 @@ h3 {
   line-height: 1.2;
 }
 
+html[data-theme="dark"] .tag,
+html[data-theme="dark"] .mini-tags span {
+  color: var(--ink);
+}
+
 .tag {
   padding: 7px 10px;
   font-size: 0.85rem;
@@ -299,6 +307,10 @@ h3 {
   gap: 8px;
   padding: 12px 0 20px;
   background: linear-gradient(to bottom, var(--bg) 65%, rgba(247, 244, 239, 0));
+}
+
+html[data-theme="dark"] .top-nav {
+  background: linear-gradient(to bottom, var(--bg) 65%, rgba(16, 21, 29, 0));
 }
 
 .top-nav a {
@@ -345,6 +357,10 @@ h3 {
   border: 1px solid var(--line);
   border-radius: 14px;
   background: rgba(255, 255, 255, 0.45);
+}
+
+html[data-theme="dark"] .card {
+  background: rgba(255, 255, 255, 0.035);
 }
 
 .card p {
@@ -407,7 +423,7 @@ h3 {
 @media (max-width: 860px) {
   .page {
     grid-template-columns: 1fr;
-    padding-top: 24px;
+    padding-top: 64px;
   }
 
   .sidebar,
@@ -423,6 +439,13 @@ h3 {
 @media (max-width: 560px) {
   .page {
     width: min(100% - 20px, 1180px);
+  }
+
+  .floating-theme-toggle {
+    top: 10px;
+    right: 10px;
+    font-size: 0.88rem;
+    padding: 8px 10px;
   }
 
   .profile-card,
@@ -471,7 +494,8 @@ h3 {
 
   .top-nav,
   .print-button,
-  .skip-link {
+  .skip-link,
+  .theme-toggle {
     display: none !important;
   }
 
