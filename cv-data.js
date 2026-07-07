@@ -5,7 +5,7 @@ window.CV_DATA = {
   name: "Siddharth Chaturvedi",
   initials: "SC",
   role: "Complex adaptive systems · Agent-based modelling · Collective & Diverse Intelligence",
-  location: "Netherlands",
+  location: "Nijmegen, Netherlands",
   shortSummary:
     "I build computational models and software to study complex adaptive systems"
   about:
