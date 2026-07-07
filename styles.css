@@ -139,7 +139,9 @@ h3 {
 }
 
 .location,
-.summary,
+.summary{
+  white-space: pre-line;
+},
 .meta {
   color: var(--muted);
 }
