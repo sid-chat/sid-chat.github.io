@@ -378,8 +378,11 @@
         setText("role", data.role);
         setText("location", data.location);
         setText("summary", data.shortSummary);
-        setText("about-text", data.about);
         setText("footer-name", data.name);
+        const aboutText = byId("about-text");
+        if (aboutText) {
+            aboutText.innerHTML = data.about || "";
+        }
 
         renderLinks();
         renderTags("keywords", data.keywords);
