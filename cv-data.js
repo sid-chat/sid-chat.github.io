@@ -36,7 +36,7 @@ window.CV_DATA = {
   keywords: [
     "Agent-based modelling",
     "Complex adaptive systems",
-    "Collective and Diverse Intelligence"
+    "Collective and Diverse Intelligence",
     "Artificial life",
     "Multi-agent systems",
     "JAX",
