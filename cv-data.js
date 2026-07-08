@@ -73,7 +73,7 @@ window.CV_DATA = {
   {
     name: "Emergence in Multi-agent Systems",
     meta: "Placeholder",
-    image: "media/emergence-multi-agent.svg",
+    image: "media/foraging_swarm.gif",
     description:
       "Placeholder text. Add a short description here about coordination, role differentiation, cooperation, competition, and emergent structure in multi-agent systems.",
     tags: ["multi-agent systems", "emergence", "coordination"]
