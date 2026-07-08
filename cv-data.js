@@ -45,12 +45,40 @@ window.CV_DATA = {
     "Adaptive controllers"
   ],
 
-  interests: [
-    "Scaling agent-based simulations when populations change dynamically.",
-    "Emergence of coordination, cooperation, and role differentiation in many-agent systems.",
-    "Adaptive controllers that grow, prune, and reorganize their computational structure.",
-    "JAX-based simulation and optimization for artificial life and complex adaptive systems."
-  ],
+  researchInterests: [
+  {
+    name: "Scaling of Complex Adaptive Systems",
+    meta: "Dynamic populations across domains",
+    image: "media/scaling-complex-systems.gif",
+    description:
+      "How do complex systems change when their number of entities changes over time? This theme connects agent birth, death, interaction, and reorganization across animals, cars, buildings, neurons, and artificial agents.",
+    tags: ["dynamic populations", "complex systems", "scaling"]
+  },
+  {
+    name: "Collective and Diverse Intelligence",
+    meta: "Placeholder",
+    image: "media/collective-diverse-intelligence.svg",
+    description:
+      "Placeholder text. Add a short description here about collective intelligence, diversity, embodied cognition, and how many interacting agents produce adaptive group-level behavior.",
+    tags: ["collective intelligence", "diversity", "embodiment"]
+  },
+  {
+    name: "Vectorized Algorithms",
+    meta: "Placeholder",
+    image: "media/vectorized-algorithms.svg",
+    description:
+      "Placeholder text. Add a short description here about vectorized simulation, accelerator-friendly algorithms, JAX, batching, and scalable computational models.",
+    tags: ["JAX", "vectorization", "simulation"]
+  },
+  {
+    name: "Emergence in Multi-agent Systems",
+    meta: "Placeholder",
+    image: "media/emergence-multi-agent.svg",
+    description:
+      "Placeholder text. Add a short description here about coordination, role differentiation, cooperation, competition, and emergent structure in multi-agent systems.",
+    tags: ["multi-agent systems", "emergence", "coordination"]
+  }
+],
 
   projects: [
     {
