@@ -71,7 +71,7 @@ window.CV_DATA = {
     tags: ["JAX", "vectorization", "simulation"]
   },
   {
-    name: "Emergence in Multi-agent Systems",
+    name: "Emergence in Multi-Agent Systems",
     meta: "Placeholder",
     image: "media/foraging_swarm.gif",
     description:
@@ -89,7 +89,7 @@ window.CV_DATA = {
       description:
         "Using an engineered fitness function to tune a predator-prey continuous ABM towards Lotka-Volterra dynamics in a top-down manner.",
       link: "https://arxiv.org/pdf/2606.13639",
-      linkLabel: "Add link"
+      linkLabel: "Pre-print"
     },
     {
       year: "2026",
