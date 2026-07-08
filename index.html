@@ -69,8 +69,89 @@
       function setText(id, value) { const el = byId(id); if (el) el.textContent = value || ""; }
       function hideIfEmpty(sectionId, value) { const el = byId(sectionId); if (!el) return; const empty = !value || (Array.isArray(value) && value.length === 0); if (empty) el.hidden = true; }
       function link(label, url) { if (!url || url === "#") return ""; const a = document.createElement("a"); a.href = url; a.textContent = label; if (!url.startsWith("mailto:") && !url.startsWith("#")) { a.target = "_blank"; a.rel = "noreferrer"; } return a; }
-      function iconForLink(label, url) { const text = `${label || ""} ${url || ""}`.toLowerCase(); if (text.includes("email") || text.includes("mailto:")) return "✉"; if (text.includes("github")) return "GH"; if (text.includes("scholar")) return "🎓"; if (text.includes("linkedin")) return "in"; if (text.includes("bluesky") || text.includes("bsky")) return "🦋"; if (text.includes("twitter") || text.includes("x.com") || label === "X") return "𝕏"; if (text.includes("cv") || text.includes("pdf")) return "CV"; return "↗"; }
-      function renderLinks() { const container = byId("links"); const links = data.links || []; if (!container) return; container.innerHTML = ""; links.forEach((item) => { if (!item.url || item.url === "#") return; const a = link(item.label, item.url); if (!a) return; a.className = "profile-icon-link"; a.title = item.label; a.setAttribute("aria-label", item.label); const icon = document.createElement("span"); icon.setAttribute("aria-hidden", "true"); icon.textContent = iconForLink(item.label, item.url); const sr = document.createElement("span"); sr.className = "sr-only"; sr.textContent = item.label; a.textContent = ""; a.appendChild(icon); a.appendChild(sr); container.appendChild(a); }); }
+      function linkKind(label, url) {
+        const text = `${label || ""} ${url || ""}`.toLowerCase();
+
+        if (text.includes("email") || text.includes("mailto:")) return "email";
+        if (text.includes("github")) return "github";
+        if (text.includes("scholar")) return "scholar";
+        if (text.includes("linkedin")) return "linkedin";
+        if (text.includes("bluesky") || text.includes("bsky")) return "bluesky";
+        if (text.includes("twitter") || text.includes("x.com") || label === "X") return "x";
+        if (text.includes("cv") || text.includes("pdf")) return "cv";
+
+        return "external";
+      }
+
+      function emailFromUrl(url) {
+        if (!url || !url.startsWith("mailto:")) return "";
+        return url.replace("mailto:", "").split("?")[0];
+      }
+
+      function iconMarkup(kind) {
+        if (kind === "email") {
+          return `
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M3.75 5.5h16.5c.69 0 1.25.56 1.25 1.25v10.5c0 .69-.56 1.25-1.25 1.25H3.75c-.69 0-1.25-.56-1.25-1.25V6.75c0-.69.56-1.25 1.25-1.25Zm.9 2.35v8.3h14.7v-8.3l-6.65 5.16a1.12 1.12 0 0 1-1.4 0L4.65 7.85Zm1.2-.85L12 11.76 18.15 7H5.85Z"/>
+            </svg>
+          `;
+        }
+
+        if (kind === "github") {
+          return `
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 .75A11.25 11.25 0 0 0 8.44 22.67c.56.1.77-.24.77-.54v-1.9c-3.14.68-3.8-1.35-3.8-1.35-.51-1.3-1.25-1.65-1.25-1.65-1.02-.7.08-.69.08-.69 1.13.08 1.72 1.16 1.72 1.16 1 .1 1.57 1.52 3.22 1.08.1-.73.39-1.23.71-1.51-2.5-.29-5.14-1.25-5.14-5.57 0-1.23.44-2.23 1.16-3.02-.12-.28-.5-1.43.11-2.98 0 0 .95-.3 3.1 1.15a10.7 10.7 0 0 1 5.64 0c2.15-1.45 3.1-1.15 3.1-1.15.61 1.55.23 2.7.11 2.98.72.79 1.16 1.79 1.16 3.02 0 4.33-2.64 5.28-5.15 5.56.4.35.76 1.04.76 2.1v3.12c0 .3.2.65.78.54A11.25 11.25 0 0 0 12 .75Z"/>
+            </svg>
+          `;
+        }
+
+        if (kind === "linkedin") return "in";
+        if (kind === "scholar") return "🎓";
+        if (kind === "bluesky") return "🦋";
+        if (kind === "x") return "𝕏";
+        if (kind === "cv") return "CV";
+
+        return "↗";
+      }
+
+      function renderLinks() {
+        const container = byId("links");
+        const links = data.links || [];
+        if (!container) return;
+
+        container.innerHTML = "";
+
+        links.forEach((item) => {
+          if (!item.url || item.url === "#") return;
+
+          const a = link(item.label, item.url);
+          if (!a) return;
+
+          const kind = linkKind(item.label, item.url);
+          const email = emailFromUrl(item.url);
+          const title = kind === "email" && email ? email : item.label;
+
+          a.className = `profile-icon-link ${kind}-icon`;
+          a.title = title;
+          a.setAttribute("aria-label", title);
+
+          const icon = document.createElement("span");
+          icon.className = "profile-icon-symbol";
+          icon.setAttribute("aria-hidden", "true");
+          icon.innerHTML = iconMarkup(kind);
+
+          const sr = document.createElement("span");
+          sr.className = "sr-only";
+          sr.textContent = title;
+
+          a.textContent = "";
+          a.appendChild(icon);
+          a.appendChild(sr);
+
+          container.appendChild(a);
+        });
+      }
+
       function renderTags(id, items) { const container = byId(id); if (!container) return; container.innerHTML = ""; (items || []).forEach((item) => { const span = document.createElement("span"); span.className = "tag"; span.textContent = item; container.appendChild(span); }); }
       function renderList(id, items) { const container = byId(id); if (!container) return; container.innerHTML = ""; (items || []).forEach((item) => { const li = document.createElement("li"); li.textContent = item; container.appendChild(li); }); }
       function renderCards(id, items) { const container = byId(id); if (!container) return; container.innerHTML = ""; (items || []).forEach((item) => { const article = document.createElement("article"); article.className = "card"; const title = document.createElement("h3"); title.textContent = item.name || item.title || "Untitled"; article.appendChild(title); if (item.meta) { const meta = document.createElement("p"); meta.className = "meta"; meta.textContent = item.meta; article.appendChild(meta); } if (item.description) { const desc = document.createElement("p"); desc.textContent = item.description; article.appendChild(desc); } if (item.tags && item.tags.length) { const tags = document.createElement("div"); tags.className = "mini-tags"; item.tags.forEach((tag) => { const span = document.createElement("span"); span.textContent = tag; tags.appendChild(span); }); article.appendChild(tags); } if (item.link) { const a = link(item.linkLabel || "Link", item.link); if (a) { a.className = "text-link"; article.appendChild(a); } } container.appendChild(article); }); }
