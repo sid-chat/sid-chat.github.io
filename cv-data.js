@@ -3,6 +3,7 @@
 
 window.CV_DATA = {
   name: "Siddharth Chaturvedi",
+  displayNameHtml: "<strong>Sid</strong>dharth <strong>Chat</strong>urvedi",
   initials: "SC",
   role: "PhD candidate,\nArtificial Cognitive Systems lab,\nDonders Institute,\nRadboud University",
   location: "",
@@ -317,6 +318,22 @@ window.CV_DATA = {
       venue: "BITS Pilani, Hyderabad, India",
       description:
         ""
+    }
+  ],
+
+  supervisionIntro:
+    "Student projects I was involved in through research discussions, technical guidance, code review, and project shaping.",
+
+  supervision: [
+    {
+      year: "2026",
+      title: "Student project title",
+      venue: "Role: project support / technical guidance / co-supervision",
+      description:
+        "Replace this placeholder with a short description of the student project and what you contributed.",
+      tags: ["student project", "supervision", "research support"],
+      link: "#",
+      linkLabel: "Add link"
     }
   ],
 
