@@ -45,8 +45,7 @@
         </nav>
 
         <section id="about" class="section"><h2>About</h2><p id="about-text"></p></section>
-        <section id="interests" class="section"><h2>Research interests</h2><ul class="compact-list" id="interests-list"></ul></section>
-        <section id="projects" class="section"><h2>Selected projects</h2><div class="cards" id="projects-list"></div></section>
+        <section id="research-interests" class="section"><h2>Research Interests</h2><div class="cards research-cards" id="research-interests-list"></div></section>
         <section id="publications" class="section"><h2>Publications</h2><div class="timeline" id="publications-list"></div></section>
         <section id="talks" class="section"><h2>Talks, tutorials & workshops</h2><div class="timeline" id="talks-list"></div></section>
         <section id="software" class="section"><h2>Software</h2><div class="cards" id="software-list"></div></section>
@@ -153,9 +152,64 @@
 
       function renderTags(id, items) { const container = byId(id); if (!container) return; container.innerHTML = ""; (items || []).forEach((item) => { const span = document.createElement("span"); span.className = "tag"; span.textContent = item; container.appendChild(span); }); }
       function renderList(id, items) { const container = byId(id); if (!container) return; container.innerHTML = ""; (items || []).forEach((item) => { const li = document.createElement("li"); li.textContent = item; container.appendChild(li); }); }
-      function renderCards(id, items) { const container = byId(id); if (!container) return; container.innerHTML = ""; (items || []).forEach((item) => { const article = document.createElement("article"); article.className = "card"; const title = document.createElement("h3"); title.textContent = item.name || item.title || "Untitled"; article.appendChild(title); if (item.meta) { const meta = document.createElement("p"); meta.className = "meta"; meta.textContent = item.meta; article.appendChild(meta); } if (item.description) { const desc = document.createElement("p"); desc.textContent = item.description; article.appendChild(desc); } if (item.tags && item.tags.length) { const tags = document.createElement("div"); tags.className = "mini-tags"; item.tags.forEach((tag) => { const span = document.createElement("span"); span.textContent = tag; tags.appendChild(span); }); article.appendChild(tags); } if (item.link) { const a = link(item.linkLabel || "Link", item.link); if (a) { a.className = "text-link"; article.appendChild(a); } } container.appendChild(article); }); }
+      function renderCards(id, items) {
+        const container = byId(id);
+        if (!container) return;
+        container.innerHTML = "";
+
+        (items || []).forEach((item) => {
+          const article = document.createElement("article");
+          article.className = "card";
+
+          if (item.image) {
+            const image = document.createElement("img");
+            image.className = "card-image";
+            image.src = item.image;
+            image.alt = item.imageAlt || item.name || item.title || "";
+            article.appendChild(image);
+          }
+
+          const title = document.createElement("h3");
+          title.textContent = item.name || item.title || "Untitled";
+          article.appendChild(title);
+
+          if (item.meta) {
+            const meta = document.createElement("p");
+            meta.className = "meta";
+            meta.textContent = item.meta;
+            article.appendChild(meta);
+          }
+
+          if (item.description) {
+            const desc = document.createElement("p");
+            desc.textContent = item.description;
+            article.appendChild(desc);
+          }
+
+          if (item.tags && item.tags.length) {
+            const tags = document.createElement("div");
+            tags.className = "mini-tags";
+            item.tags.forEach((tag) => {
+              const span = document.createElement("span");
+              span.textContent = tag;
+              tags.appendChild(span);
+            });
+            article.appendChild(tags);
+          }
+
+          if (item.link) {
+            const a = link(item.linkLabel || "Link", item.link);
+            if (a) {
+              a.className = "text-link";
+              article.appendChild(a);
+            }
+          }
+
+          container.appendChild(article);
+        });
+      }
       function renderTimeline(id, items) { const container = byId(id); if (!container) return; container.innerHTML = ""; (items || []).forEach((item) => { const article = document.createElement("article"); article.className = "timeline-item"; const year = document.createElement("div"); year.className = "year"; year.textContent = item.year || ""; article.appendChild(year); const body = document.createElement("div"); body.className = "timeline-body"; const title = document.createElement("h3"); title.textContent = item.title || item.name || "Untitled"; body.appendChild(title); if (item.venue || item.meta) { const meta = document.createElement("p"); meta.className = "meta"; meta.textContent = item.venue || item.meta; body.appendChild(meta); } if (item.description) { const desc = document.createElement("p"); desc.textContent = item.description; body.appendChild(desc); } if (item.link) { const a = link(item.linkLabel || "Link", item.link); if (a) { a.className = "text-link"; body.appendChild(a); } } article.appendChild(body); container.appendChild(article); }); }
-      function init() { document.title = data.name ? `${data.name} — CV` : "Academic CV"; setText("name", data.name); setText("role", data.role); setText("location", data.location); setText("summary", data.shortSummary); setText("about-text", data.about); setText("footer-name", data.name); renderLinks(); renderTags("keywords", data.keywords); renderList("interests-list", data.interests); renderCards("projects-list", data.projects); renderTimeline("publications-list", data.publications); renderTimeline("talks-list", data.talks); renderCards("software-list", data.software); renderTimeline("education-list", data.education); renderTimeline("service-list", data.service); hideIfEmpty("about", data.about); hideIfEmpty("interests", data.interests); hideIfEmpty("projects", data.projects); hideIfEmpty("publications", data.publications); hideIfEmpty("talks", data.talks); hideIfEmpty("software", data.software); hideIfEmpty("education", data.education); hideIfEmpty("service", data.service); }
+      function init() { document.title = data.name ? `${data.name} — CV` : "Academic CV"; setText("name", data.name); setText("role", data.role); setText("location", data.location); setText("summary", data.shortSummary); setText("about-text", data.about); setText("footer-name", data.name); renderLinks(); renderTags("keywords", data.keywords); renderCards("research-interests-list", data.researchInterests || []); renderTimeline("publications-list", data.publications); renderTimeline("talks-list", data.talks); renderCards("software-list", data.software); renderTimeline("education-list", data.education); renderTimeline("service-list", data.service); hideIfEmpty("about", data.about); hideIfEmpty("research-interests", data.researchInterests); hideIfEmpty("publications", data.publications); hideIfEmpty("talks", data.talks); hideIfEmpty("software", data.software); hideIfEmpty("education", data.education); hideIfEmpty("service", data.service); }
       init();
     </script>
     <script>
