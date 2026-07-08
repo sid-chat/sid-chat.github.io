@@ -72,7 +72,7 @@ window.CV_DATA = {
     meta: "Is the traditional cognitive science inspired intelligence the only mechanism by which general intelligence can be realized?",
     image: "media/collective_diverse_intelligence.png",
     description:
-      "Maybe the way a biological brain produces intelligence is just one mechanism to functionally realize it. Like an island in the sea. Maybe there are other islands in the sea. Maybe these other islands are more efficient when realized in-silico.",
+      "Maybe the way a biological brain produces intelligence is just one mechanism to functionally realize it. Like an island in the sea. Maybe there are other islands in the sea. Maybe these other islands are more efficient when realized in-silico. For instance, think of how the distributed nervous system of an octopus is different than ours.",
     tags: [
     {
       label: "Intelligence as remapping and navigation of an embedding space",
