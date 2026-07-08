@@ -468,3 +468,12 @@ html[data-theme="dark"] .card { background: rgba(255, 255, 255, 0.035); }
   font-size: 0.95rem;
   margin-bottom: 6px;
 }
+#about-text a {
+  color: var(--accent);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+#about-text a:hover {
+  text-decoration: underline;
+}
