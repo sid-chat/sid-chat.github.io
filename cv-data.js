@@ -55,7 +55,7 @@ window.CV_DATA = {
     meta: "What happens when the number of entities in a complex adaptive system changes over time?",
     image: "media/SID_new.gif",
     description:
-      "We live in (economic systems, social networks, transport routes, ecology, etc) and we are (immunity systems, thoughts, cells, etc) complex adaptive systems where the number of entities and thus their connections continuously keeps changing. Certain traits of such systems remain robust, and certain traits evolve (often power scaling). I aim to better our understanding of such systems by modelling them computationally.",
+      "We live in (economic systems, social networks, transport routes, ecology, etc) and we are (immunity systems, thoughts, cells, etc) complex adaptive systems where the number of entities and thus their connections continuously keeps changing. Certain traits of such systems remain robust, and certain traits evolve (often power scaling). Aim is to better our understanding of such systems by modelling them computationally.",
     tags: [
     {
       label: "Scale: The Universal Laws of Life and Death in Organisms, Cities and Companies",
@@ -72,7 +72,7 @@ window.CV_DATA = {
     meta: "Is the traditional cognitive science inspired intelligence the only mechanism by which general intelligence can be realized?",
     image: "media/collective_diverse_intelligence.png",
     description:
-      "Maybe the way a biological brain produces intelligence is just one mechanism to functionally realize it. Like an island in the sea. Maybe there are other islands in the sea. Maybe these other islands are more efficient when realized in-silico. For instance, think of how the distributed nervous system of an octopus is different than ours.",
+      "Maybe the way a biological brain produces intelligence is just one mechanism to functionally realize it. Like an island in the sea. Maybe there are other islands in the sea. Maybe these other islands are more efficient when realized in-silico. For instance, think of how the distributed nervous system of an octopus is different than ours. Here, aim is to define intelligence more functionally rather than mechanistically.",
     tags: [
     {
       label: "Intelligence as remapping and navigation of an embedding space",
@@ -93,7 +93,7 @@ window.CV_DATA = {
     meta: "Can a brute-force vectorized version of an algorithm be more efficient than its optimized serial version?",
     image: "media/seq_to_vec.png",
     description:
-      "Given the increasing availability of vectorized compute (GPU, TPU, FPGAs), can we redesign classical algorithms such that their brute-force vectorized version can utilize the hardware accelerators to outperform their streamlined serial versions? I mainly use JAX for this as we can vectorize across sequential logics that use loops and conditions",
+      "Given the increasing availability of vectorized compute (GPU, TPU, FPGAs), can we redesign classical algorithms such that their brute-force vectorized version can utilize the hardware accelerators to outperform their streamlined serial versions? Such implementations can be useful for instance in the case of event-based models. JAX can be useful here, as we can vectorize over loops and conditional logic using it.",
     tags: [
     {
       label: "JAX",
