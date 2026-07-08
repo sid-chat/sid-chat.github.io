@@ -58,6 +58,7 @@
           <a href="#talks">Talks</a>
           <a href="#software">Software</a>
           <a href="#education">Education</a>
+          <a href="#supervision">Supervision</a>
           <a href="#service">Service</a>
         </nav>
 
@@ -92,6 +93,12 @@
         <section id="education" class="section">
           <h2>Education</h2>
           <div class="timeline" id="education-list"></div>
+        </section>
+
+        <section id="supervision" class="section">
+          <h2>Supervision</h2>
+          <p class="section-intro" id="supervision-intro"></p>
+          <div class="timeline" id="supervision-list"></div>
         </section>
 
         <section id="service" class="section">
@@ -399,6 +406,8 @@
             body.appendChild(description);
           }
 
+          renderMiniTags(item.tags, body);
+
           if (item.link) {
             const anchor = link(item.linkLabel || "Link", item.link);
 
@@ -416,11 +425,12 @@
       function init() {
         document.title = data.name ? `${data.name} — CV` : "Academic CV";
 
-        setText("name", data.name);
+        setHtml("name", data.displayNameHtml || data.name);
         setText("role", data.role);
         setText("location", data.location);
         setText("summary", data.shortSummary);
         setHtml("about-text", data.about);
+        setHtml("supervision-intro", data.supervisionIntro);
         setText("footer-name", data.name);
 
         renderLinks();
@@ -430,6 +440,7 @@
         renderTimeline("talks-list", data.talks);
         renderCards("software-list", data.software);
         renderTimeline("education-list", data.education);
+        renderTimeline("supervision-list", data.supervision);
         renderTimeline("service-list", data.service);
 
         hideIfEmpty("about", data.about);
@@ -438,6 +449,16 @@
         hideIfEmpty("talks", data.talks);
         hideIfEmpty("software", data.software);
         hideIfEmpty("education", data.education);
+
+        const hasSupervision =
+          data.supervisionIntro ||
+          (data.supervision && data.supervision.length > 0);
+
+        if (!hasSupervision) {
+          const supervisionSection = byId("supervision");
+          if (supervisionSection) supervisionSection.hidden = true;
+        }
+
         hideIfEmpty("service", data.service);
       }
 
