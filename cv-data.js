@@ -199,7 +199,26 @@ window.CV_DATA = {
         "",
       link: "https://uobevents.eventsair.com/the-mechanistic-basis-of-foraging/",
       linkLabel: "Event website"
+    },
+    {
+      year: "2025",
+      title: "ABMax: an agent-based modelling framework based in JAX",
+      venue: "Dutch Sequential Decision Making meeting, Eindhoven",
+      description:
+        "",
+      link: "https://www.lnmb.nl/pages/courses/phdcourses/SDM/",
+      linkLabel: "Event website"
+    },
+    {
+      year: "2024",
+      title: "Why is it time to revisit Artificial Life?",
+      venue: "Pint of Science, Nijmegen",
+      description:
+        "",
+      link: "https://www.pintofscience.nl/event/questions-that-move-science-day-3/",
+      linkLabel: "Event website"
     }
+    
     
   ],
 
