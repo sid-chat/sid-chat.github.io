@@ -219,6 +219,15 @@ window.CV_DATA = {
     },
     {
       year: "2024",
+      title: "Introduction to dynamical systems modelling using JAX",
+      venue: "DBI2 training week for young researchers, Ravenstein",
+      description:
+        "",
+      link: "https://dbi2.nl/news-events/events/2024-dbi2-training-week",
+      linkLabel: "Event website"
+    },
+    {
+      year: "2024",
       title: "Why is it time to revisit Artificial Life?",
       venue: "Pint of Science, Nijmegen",
       description:
