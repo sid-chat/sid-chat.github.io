@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Vectorized Algorithms">
+  <defs>
+    <radialGradient id="g" cx="30%" cy="20%" r="80%">
+      <stop offset="0%" stop-color="#9ee6d3" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#2b5f55" stop-opacity="1"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="360" rx="28" fill="url(#g)"/>
+  <g fill="none" stroke="#fffdf9" stroke-opacity="0.62" stroke-width="3">
+    <path d="M130 230 C190 120, 290 300, 365 170 S515 120, 550 230"/>
+    <path d="M110 155 C205 220, 260 95, 350 155 S470 260, 545 140"/>
+    <path d="M160 285 L250 95 L340 270 L430 110 L520 250"/>
+  </g>
+  <g fill="#fffdf9">
+    <circle cx="130" cy="230" r="9"/>
+    <circle cx="250" cy="95" r="9"/>
+    <circle cx="340" cy="270" r="9"/>
+    <circle cx="430" cy="110" r="9"/>
+    <circle cx="520" cy="250" r="9"/>
+    <circle cx="365" cy="170" r="9"/>
+  </g>
+  <text x="40" y="320" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="800" fill="#fffdf9">Vectorized Algorithms</text>
+</svg>
