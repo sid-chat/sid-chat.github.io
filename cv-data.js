@@ -8,7 +8,7 @@ window.CV_DATA = {
   location: "",
   shortSummary: "",
   about:
-    "Namaste and welcome to my website. \n\nProfessionally: I am a mechanical and control engineer who began doing a PhD in the field of AI and is now concluding it in the field of complex systems. \n\n Not Professionally: Robot-maker, Guitar-player, Blog-writer, Hike-master, Salsa-dancer, Slow-swimmer, Animal-lover.",
+    "Namaste and welcome to my website. \n\nProfessionally: I am a mechanical and control engineer who began doing a PhD in the field of AI and is now concluding it in the field of complex systems. I am currently part of the Dutch Brain Interface Initiative (DBI2) consortium and am supervised by prof. Marcel van Gerven. \n\n Not Professionally: Robot-maker, Guitar-player, Blog-writer, Hike-master, Salsa-dancer, Slow-swimmer, Animal-lover.",
 
   links: [
     { label: "Email", url: "mailto:siddharth.chaturvedi@donders.ru.nl" },
@@ -85,7 +85,7 @@ window.CV_DATA = {
       year: "2026",
       title: "Tuning Agent-Based Predator-Prey Models Toward Lotka-Volterra Dynamics",
       authors: "Corinna Mandl, Siddharth Chaturvedi, Marcel van Gerven",
-      venue: "Simulation of Adaptive Behaviour (Accepted)",
+      venue: "Simulation of Adaptive Behaviour, 2026, (Accepted)",
       description:
         "Using an engineered fitness function to tune a predator-prey continuous ABM towards Lotka-Volterra dynamics in a top-down manner.",
       link: "https://arxiv.org/pdf/2606.13639",
@@ -94,9 +94,10 @@ window.CV_DATA = {
     {
       year: "2026",
       title: "Role differentiation in a shared-resource ecology under multi-level selection",
-      venue: "ALIFE 2026",
+      authors: "Siddharth Chaturvedi, Ahmed, El-Gazzar, Marcel van Gerven",
+      venue: "Artificial Life, 2026, (Accepted)",
       description:
-        "Agent-based modelling study of role differentiation, resource use, and group-level selection in a shared-resource ecology.",
+        "Agent-based model to study role differentiation, resource use, and group-level selection in a shared-resource ecology.",
       link: "#",
       linkLabel: "Add link"
     },
