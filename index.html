@@ -10,7 +10,12 @@
   </head>
 
   <body>
-    <button class="theme-toggle floating-theme-toggle" id="theme-toggle" type="button" aria-label="Toggle dark mode">
+    <button
+      class="theme-toggle floating-theme-toggle"
+      id="theme-toggle"
+      type="button"
+      aria-label="Toggle dark mode"
+    >
       🌙 Dark mode
     </button>
 
@@ -19,17 +24,29 @@
     <div class="page">
       <aside class="sidebar" aria-label="Profile summary">
         <div class="profile-card">
-          <img class="avatar" src="media/git_pic.jpg" alt="Photo of Siddharth Chaturvedi" />
+          <img
+            class="avatar"
+            src="media/git_pic.jpg"
+            alt="Photo of Siddharth Chaturvedi"
+          />
 
           <h1 id="name">Your Name</h1>
           <p class="role" id="role">Your role</p>
 
-          <div class="tags profile-keywords" id="keywords" aria-label="Research keywords"></div>
+          <div
+            class="tags profile-keywords"
+            id="keywords"
+            aria-label="Research keywords"
+          ></div>
 
           <p class="location" id="location"></p>
           <p class="summary" id="summary"></p>
 
-          <div class="profile-icons" id="links" aria-label="Profile and contact links"></div>
+          <div
+            class="profile-icons"
+            id="links"
+            aria-label="Profile and contact links"
+          ></div>
         </div>
       </aside>
 
@@ -44,29 +61,98 @@
           <a href="#service">Service</a>
         </nav>
 
-        <section id="about" class="section"><h2>About</h2><p id="about-text"></p></section>
-        <section id="research-interests" class="section"><h2>Research Interests</h2><div class="cards research-cards" id="research-interests-list"></div></section>
-        <section id="publications" class="section"><h2>Publications</h2><div class="timeline" id="publications-list"></div></section>
-        <section id="talks" class="section"><h2>Talks, tutorials & workshops</h2><div class="timeline" id="talks-list"></div></section>
-        <section id="software" class="section"><h2>Software</h2><div class="cards" id="software-list"></div></section>
-        <section id="education" class="section"><h2>Education</h2><div class="timeline" id="education-list"></div></section>
-        <section id="service" class="section"><h2>Service & community</h2><div class="timeline" id="service-list"></div></section>
+        <section id="about" class="section">
+          <h2>About</h2>
+          <p id="about-text"></p>
+        </section>
+
+        <section id="research-interests" class="section">
+          <h2>Research Interests</h2>
+          <div
+            class="cards research-cards"
+            id="research-interests-list"
+          ></div>
+        </section>
+
+        <section id="publications" class="section">
+          <h2>Publications</h2>
+          <div class="timeline" id="publications-list"></div>
+        </section>
+
+        <section id="talks" class="section">
+          <h2>Talks, tutorials & workshops</h2>
+          <div class="timeline" id="talks-list"></div>
+        </section>
+
+        <section id="software" class="section">
+          <h2>Software</h2>
+          <div class="cards" id="software-list"></div>
+        </section>
+
+        <section id="education" class="section">
+          <h2>Education</h2>
+          <div class="timeline" id="education-list"></div>
+        </section>
+
+        <section id="service" class="section">
+          <h2>Service & community</h2>
+          <div class="timeline" id="service-list"></div>
+        </section>
 
         <footer class="footer">
           <span id="footer-name">Your Name</span>
           <span>·</span>
-          <button type="button" class="print-button" onclick="window.print()">Print / save as PDF</button>
+          <button
+            type="button"
+            class="print-button"
+            onclick="window.print()"
+          >
+            Print / save as PDF
+          </button>
         </footer>
       </main>
     </div>
 
     <script src="cv-data.js"></script>
+
     <script>
       const data = window.CV_DATA || {};
       const byId = (id) => document.getElementById(id);
-      function setText(id, value) { const el = byId(id); if (el) el.textContent = value || ""; }
-      function hideIfEmpty(sectionId, value) { const el = byId(sectionId); if (!el) return; const empty = !value || (Array.isArray(value) && value.length === 0); if (empty) el.hidden = true; }
-      function link(label, url) { if (!url || url === "#") return ""; const a = document.createElement("a"); a.href = url; a.textContent = label; if (!url.startsWith("mailto:") && !url.startsWith("#")) { a.target = "_blank"; a.rel = "noreferrer"; } return a; }
+
+      function setText(id, value) {
+        const element = byId(id);
+        if (!element) return;
+        element.textContent = value || "";
+      }
+
+      function hideIfEmpty(sectionId, value) {
+        const element = byId(sectionId);
+        if (!element) return;
+
+        const empty =
+          !value ||
+          (Array.isArray(value) && value.length === 0);
+
+        if (empty) {
+          element.hidden = true;
+        }
+      }
+
+      function link(label, url) {
+        if (!url || url === "#") return "";
+
+        const anchor = document.createElement("a");
+        anchor.href = url;
+        anchor.textContent = label;
+
+        if (!url.startsWith("mailto:") && !url.startsWith("#")) {
+          anchor.target = "_blank";
+          anchor.rel = "noreferrer";
+        }
+
+        return anchor;
+      }
+
       function linkKind(label, url) {
         const text = `${label || ""} ${url || ""}`.toLowerCase();
 
@@ -122,39 +208,52 @@
         links.forEach((item) => {
           if (!item.url || item.url === "#") return;
 
-          const a = link(item.label, item.url);
-          if (!a) return;
+          const anchor = link(item.label, item.url);
+          if (!anchor) return;
 
           const kind = linkKind(item.label, item.url);
           const email = emailFromUrl(item.url);
           const title = kind === "email" && email ? email : item.label;
 
-          a.className = `profile-icon-link ${kind}-icon`;
-          a.title = title;
-          a.setAttribute("aria-label", title);
+          anchor.className = `profile-icon-link ${kind}-icon`;
+          anchor.title = title;
+          anchor.setAttribute("aria-label", title);
 
           const icon = document.createElement("span");
           icon.className = "profile-icon-symbol";
           icon.setAttribute("aria-hidden", "true");
           icon.innerHTML = iconMarkup(kind);
 
-          const sr = document.createElement("span");
-          sr.className = "sr-only";
-          sr.textContent = title;
+          const screenReaderLabel = document.createElement("span");
+          screenReaderLabel.className = "sr-only";
+          screenReaderLabel.textContent = title;
 
-          a.textContent = "";
-          a.appendChild(icon);
-          a.appendChild(sr);
+          anchor.textContent = "";
+          anchor.appendChild(icon);
+          anchor.appendChild(screenReaderLabel);
 
-          container.appendChild(a);
+          container.appendChild(anchor);
         });
       }
 
-      function renderTags(id, items) { const container = byId(id); if (!container) return; container.innerHTML = ""; (items || []).forEach((item) => { const span = document.createElement("span"); span.className = "tag"; span.textContent = item; container.appendChild(span); }); }
-      function renderList(id, items) { const container = byId(id); if (!container) return; container.innerHTML = ""; (items || []).forEach((item) => { const li = document.createElement("li"); li.textContent = item; container.appendChild(li); }); }
+      function renderTags(id, items) {
+        const container = byId(id);
+        if (!container) return;
+
+        container.innerHTML = "";
+
+        (items || []).forEach((item) => {
+          const span = document.createElement("span");
+          span.className = "tag";
+          span.textContent = item;
+          container.appendChild(span);
+        });
+      }
+
       function renderCards(id, items) {
         const container = byId(id);
         if (!container) return;
+
         container.innerHTML = "";
 
         (items || []).forEach((item) => {
@@ -181,44 +280,159 @@
           }
 
           if (item.description) {
-            const desc = document.createElement("p");
-            desc.textContent = item.description;
-            article.appendChild(desc);
+            const description = document.createElement("p");
+            description.textContent = item.description;
+            article.appendChild(description);
           }
 
           if (item.tags && item.tags.length) {
             const tags = document.createElement("div");
             tags.className = "mini-tags";
+
             item.tags.forEach((tag) => {
               const span = document.createElement("span");
               span.textContent = tag;
               tags.appendChild(span);
             });
+
             article.appendChild(tags);
           }
 
           if (item.link) {
-            const a = link(item.linkLabel || "Link", item.link);
-            if (a) {
-              a.className = "text-link";
-              article.appendChild(a);
+            const anchor = link(item.linkLabel || "Link", item.link);
+
+            if (anchor) {
+              anchor.className = "text-link";
+              article.appendChild(anchor);
             }
           }
 
           container.appendChild(article);
         });
       }
-      function renderTimeline(id, items) { const container = byId(id); if (!container) return; container.innerHTML = ""; (items || []).forEach((item) => { const article = document.createElement("article"); article.className = "timeline-item"; const year = document.createElement("div"); year.className = "year"; year.textContent = item.year || ""; article.appendChild(year); const body = document.createElement("div"); body.className = "timeline-body"; const title = document.createElement("h3"); title.textContent = item.title || item.name || "Untitled"; body.appendChild(title); if (item.venue || item.meta) { const meta = document.createElement("p"); meta.className = "meta"; meta.textContent = item.venue || item.meta; body.appendChild(meta); } if (item.description) { const desc = document.createElement("p"); desc.textContent = item.description; body.appendChild(desc); } if (item.link) { const a = link(item.linkLabel || "Link", item.link); if (a) { a.className = "text-link"; body.appendChild(a); } } article.appendChild(body); container.appendChild(article); }); }
-      function init() { document.title = data.name ? `${data.name} — CV` : "Academic CV"; setText("name", data.name); setText("role", data.role); setText("location", data.location); setText("summary", data.shortSummary); setText("about-text", data.about); setText("footer-name", data.name); renderLinks(); renderTags("keywords", data.keywords); renderCards("research-interests-list", data.researchInterests || []); renderTimeline("publications-list", data.publications); renderTimeline("talks-list", data.talks); renderCards("software-list", data.software); renderTimeline("education-list", data.education); renderTimeline("service-list", data.service); hideIfEmpty("about", data.about); hideIfEmpty("research-interests", data.researchInterests); hideIfEmpty("publications", data.publications); hideIfEmpty("talks", data.talks); hideIfEmpty("software", data.software); hideIfEmpty("education", data.education); hideIfEmpty("service", data.service); }
+
+      function renderTimeline(id, items) {
+        const container = byId(id);
+        if (!container) return;
+
+        container.innerHTML = "";
+
+        (items || []).forEach((item) => {
+          const article = document.createElement("article");
+          article.className = "timeline-item";
+
+          const year = document.createElement("div");
+          year.className = "year";
+          year.textContent = item.year || "";
+          article.appendChild(year);
+
+          const body = document.createElement("div");
+          body.className = "timeline-body";
+
+          const title = document.createElement("h3");
+          title.textContent = item.title || item.name || "Untitled";
+          body.appendChild(title);
+
+          if (item.authors) {
+            const authors = document.createElement("p");
+            authors.className = "authors meta";
+            authors.textContent = item.authors;
+            body.appendChild(authors);
+          }
+
+          if (item.venue || item.meta) {
+            const meta = document.createElement("p");
+            meta.className = "meta";
+            meta.textContent = item.venue || item.meta;
+            body.appendChild(meta);
+          }
+
+          if (item.description) {
+            const description = document.createElement("p");
+            description.textContent = item.description;
+            body.appendChild(description);
+          }
+
+          if (item.link) {
+            const anchor = link(item.linkLabel || "Link", item.link);
+
+            if (anchor) {
+              anchor.className = "text-link";
+              article.appendChild(body);
+              body.appendChild(anchor);
+            }
+          }
+
+          if (!article.contains(body)) {
+            article.appendChild(body);
+          }
+
+          container.appendChild(article);
+        });
+      }
+
+      function init() {
+        document.title = data.name ? `${data.name} — CV` : "Academic CV";
+
+        setText("name", data.name);
+        setText("role", data.role);
+        setText("location", data.location);
+        setText("summary", data.shortSummary);
+        setText("about-text", data.about);
+        setText("footer-name", data.name);
+
+        renderLinks();
+        renderTags("keywords", data.keywords);
+        renderCards("research-interests-list", data.researchInterests || []);
+        renderTimeline("publications-list", data.publications);
+        renderTimeline("talks-list", data.talks);
+        renderCards("software-list", data.software);
+        renderTimeline("education-list", data.education);
+        renderTimeline("service-list", data.service);
+
+        hideIfEmpty("about", data.about);
+        hideIfEmpty("research-interests", data.researchInterests);
+        hideIfEmpty("publications", data.publications);
+        hideIfEmpty("talks", data.talks);
+        hideIfEmpty("software", data.software);
+        hideIfEmpty("education", data.education);
+        hideIfEmpty("service", data.service);
+      }
+
       init();
     </script>
+
     <script>
       const themeToggle = document.getElementById("theme-toggle");
-      function applyTheme(theme) { document.documentElement.setAttribute("data-theme", theme); localStorage.setItem("theme", theme); if (themeToggle) { themeToggle.textContent = theme === "dark" ? "☀️ Light mode" : "🌙 Dark mode"; themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode"); } }
+
+      function applyTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        localStorage.setItem("theme", theme);
+
+        if (themeToggle) {
+          themeToggle.textContent = theme === "dark" ? "☀️ Light mode" : "🌙 Dark mode";
+          themeToggle.setAttribute(
+            "aria-label",
+            theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
+          );
+        }
+      }
+
       const savedTheme = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const prefersDark =
+        window.matchMedia &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+
       applyTheme(savedTheme || (prefersDark ? "dark" : "light"));
-      if (themeToggle) { themeToggle.addEventListener("click", () => { const currentTheme = document.documentElement.getAttribute("data-theme") || "light"; applyTheme(currentTheme === "dark" ? "light" : "dark"); }); }
+
+      if (themeToggle) {
+        themeToggle.addEventListener("click", () => {
+          const currentTheme =
+            document.documentElement.getAttribute("data-theme") || "light";
+
+          applyTheme(currentTheme === "dark" ? "light" : "dark");
+        });
+      }
     </script>
   </body>
 </html>
