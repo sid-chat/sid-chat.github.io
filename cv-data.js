@@ -89,16 +89,25 @@ window.CV_DATA = {
   ]
   },
   {
-    name: "Vectorized Algorithms",
-    meta: "Placeholder",
+    name: "Vectorized Algorithms for Discrete Logic",
+    meta: "Can a brute-force vectorized version of an algorithm be more efficient than its optimized serial version?",
     image: "media/seq_to_vec.png",
     description:
-      "Placeholder text. Add a short description here about vectorized simulation, accelerator-friendly algorithms, JAX, batching, and scalable computational models.",
-    tags: ["JAX", "vectorization", "simulation"]
+      "Given the increasing availability of vectorized compute (GPU, TPU, FPGAs), can we redesign classical algorithms such that their brute-force vectorized version can utilize the hardware accelerators to outperform their streamlined serial versions? I mainly use JAX for this as we can vectorize across sequential logics that use loops and conditions",
+    tags: [
+    {
+      label: "JAX",
+      url: "https://docs.jax.dev/en/latest/notebooks/thinking_in_jax.html"
+    },
+    {
+      label: "ABMax",
+      url: "https://github.com/i-m-iron-man/abmax"
+    }  
+  ]
   },
   {
     name: "Emergence in Multi-Agent Systems",
-    meta: "Placeholder",
+    meta: "How and why do simple multi-agent systems ",
     image: "media/foraging_swarm.gif",
     description:
       "Placeholder text. Add a short description here about coordination, role differentiation, cooperation, competition, and emergent structure in multi-agent systems.",
