@@ -298,11 +298,25 @@ window.CV_DATA = {
 
   education: [
     {
-      year: "Present",
+      year: "2023 - Present",
       title: "PhD research",
-      venue: "Complex systems, agent-based modelling, and artificial life",
+      venue: "Radboud University, Nijmegen, Netherlands",
       description:
-        "Add university, lab, supervisor, and dissertation title when ready."
+        "final title still loading"
+    },
+    {
+      year: "2019 - 2021",
+      title: "M.Sc. System and Control (Robotics and Mechatronics)",
+      venue: "University of Twente, Enschede, Netherlands",
+      description:
+        ""
+    },
+    {
+      year: "2014 - 2018",
+      title: "B.E Mechanical Engineering",
+      venue: "BITS Pilani, Hyderabad, India",
+      description:
+        ""
     }
   ],
 
