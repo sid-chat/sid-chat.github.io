@@ -51,7 +51,7 @@ window.CV_DATA = {
     meta: "What happens when the number of entities in a complex adaptive system changes over time?",
     image: "media/SID_new.gif",
     description:
-      "We live in (economic systems, social networks, transport routes, ecology, etc) and we are (immunity systems, thoughts, cells, etc) complex adaptive systems where the number of entities and thus their connections continuously keeps changing. Certain traits of such systems remain robust, and certain traits evolve (often power scaling). Aim is to better our understanding of such systems by modelling them computationally.",
+      "We live in (economic systems, social networks, transport routes, ecology, etc) and we are (immunity systems, thoughts, cells, etc) complex adaptive systems wherein the number of entities and thus their connections continuously keeps changing. Certain traits of such systems remain robust, and certain traits evolve (often power scaling). Aim is to better our understanding of such systems by modelling them computationally.",
     tags: [
     {
       label: "Scale: The Universal Laws of Life and Death in Organisms, Cities and Companies",
