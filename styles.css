@@ -446,3 +446,20 @@ html[data-theme="dark"] .card { background: rgba(255, 255, 255, 0.035); }
   font-size: 0.78rem;
   letter-spacing: 0.02em;
 }
+
+
+/* Research interest cards */
+.research-cards .card {
+  overflow: hidden;
+}
+
+.card-image {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  border: 1px solid var(--line);
+  background: var(--tag);
+}
