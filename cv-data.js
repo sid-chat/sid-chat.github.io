@@ -80,34 +80,6 @@ window.CV_DATA = {
   }
 ],
 
-  projects: [
-    {
-      name: "ABMax",
-      meta: "JAX-based agent-based modelling framework",
-      description:
-        "A framework for scalable agent-based modelling with dynamic populations, designed around JAX transformations and accelerator-friendly simulation.",
-      tags: ["JAX", "ABM", "simulation"],
-      link: "https://github.com/i-m-iron-man/abmax",
-      linkLabel: "View code"
-    },
-    {
-      name: "Foragax",
-      meta: "Many-agent foraging environments",
-      description:
-        "A set of continuous-space foraging environments for studying common-pool resources, depletion, regeneration, and emergent collective behavior.",
-      tags: ["multi-agent", "foraging", "ecology"],
-      link: "https://github.com/i-m-iron-man/abmax/tree/master/examples/foragax",
-      linkLabel: "View example"
-    },
-    {
-      name: "Adaptive oscillator controllers",
-      meta: "Open-ended controller structure",
-      description:
-        "A research direction exploring controllers as evolving ecologies of oscillatory components that can be born, pruned, and reorganized under task pressure.",
-      tags: ["oscillators", "reservoirs", "adaptation"]
-    }
-  ],
-
   publications: [
     {
       year: "2026",
