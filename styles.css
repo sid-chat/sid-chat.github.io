@@ -225,7 +225,9 @@ html[data-theme="dark"] .top-nav a {
   flex-wrap: wrap;
   gap: 8px;
 }
-.tag, .mini-tags span {
+.tag,
+.mini-tags span,
+.mini-tags a {
   display: inline-flex;
   align-items: center;
   border-radius: 999px;
@@ -235,16 +237,29 @@ html[data-theme="dark"] .top-nav a {
   line-height: 1.2;
 }
 html[data-theme="dark"] .tag,
-html[data-theme="dark"] .mini-tags span {
+html[data-theme="dark"] .mini-tags span,
+html[data-theme="dark"] .mini-tags a {
   color: var(--ink);
 }
 .tag {
   padding: 7px 10px;
   font-size: 0.85rem;
 }
-.mini-tags span {
+.mini-tags span,
+.mini-tags a {
   padding: 5px 8px;
   font-size: 0.78rem;
+}
+
+.mini-tags a {
+  text-decoration: none;
+  transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+}
+
+.mini-tags a:hover {
+  transform: translateY(-1px);
+  border-color: rgba(23, 74, 124, 0.35);
+  text-decoration: none;
 }
 .side-section p { margin: 0 0 10px; }
 .side-section p:last-child { margin-bottom: 0; }
@@ -394,7 +409,7 @@ html[data-theme="dark"] .card { background: rgba(255, 255, 255, 0.035); }
     break-inside: avoid;
   }
   .avatar, .profile-icons { display: none !important; }
-  .links a, .tag, .mini-tags span {
+  .links a, .tag, .mini-tags span, .mini-tags a {
     border: 0;
     padding: 0;
     background: transparent;
@@ -463,11 +478,9 @@ html[data-theme="dark"] .card { background: rgba(255, 255, 255, 0.035); }
   border: 1px solid var(--line);
   background: var(--tag);
 }
-.authors {
-  color: var(--ink);
-  font-size: 0.95rem;
-  margin-bottom: 6px;
-}
+
+
+/* About-section links */
 #about-text a {
   color: var(--accent);
   font-weight: 700;
@@ -476,4 +489,11 @@ html[data-theme="dark"] .card { background: rgba(255, 255, 255, 0.035); }
 
 #about-text a:hover {
   text-decoration: underline;
+}
+
+/* Publication authors */
+.authors {
+  color: var(--ink);
+  font-size: 0.95rem;
+  margin-bottom: 6px;
 }
