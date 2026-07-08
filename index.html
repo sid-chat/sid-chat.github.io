@@ -23,21 +23,14 @@
 
           <h1 id="name">Your Name</h1>
           <p class="role" id="role">Your role</p>
+
+          <div class="tags profile-keywords" id="keywords" aria-label="Research keywords"></div>
+
           <p class="location" id="location"></p>
           <p class="summary" id="summary"></p>
 
-          <div class="links" id="links" aria-label="Profile links"></div>
+          <div class="profile-icons" id="links" aria-label="Profile and contact links"></div>
         </div>
-
-        <section class="side-section" id="keywords-section">
-          <h2>Research keywords</h2>
-          <div class="tags" id="keywords"></div>
-        </section>
-
-        <section class="side-section" id="contact-section">
-          <h2>Contact</h2>
-          <div id="contact"></div>
-        </section>
       </aside>
 
       <main id="main" class="content">
@@ -49,47 +42,17 @@
           <a href="#talks">Talks</a>
           <a href="#software">Software</a>
           <a href="#education">Education</a>
+          <a href="#service">Service</a>
         </nav>
 
-        <section id="about" class="section">
-          <h2>About</h2>
-          <p id="about-text"></p>
-        </section>
-
-        <section id="interests" class="section">
-          <h2>Research interests</h2>
-          <ul class="compact-list" id="interests-list"></ul>
-        </section>
-
-        <section id="projects" class="section">
-          <h2>Selected projects</h2>
-          <div class="cards" id="projects-list"></div>
-        </section>
-
-        <section id="publications" class="section">
-          <h2>Publications</h2>
-          <div class="timeline" id="publications-list"></div>
-        </section>
-
-        <section id="talks" class="section">
-          <h2>Talks, tutorials & workshops</h2>
-          <div class="timeline" id="talks-list"></div>
-        </section>
-
-        <section id="software" class="section">
-          <h2>Software</h2>
-          <div class="cards" id="software-list"></div>
-        </section>
-
-        <section id="education" class="section">
-          <h2>Education</h2>
-          <div class="timeline" id="education-list"></div>
-        </section>
-
-        <section id="service" class="section">
-          <h2>Service & community</h2>
-          <div class="timeline" id="service-list"></div>
-        </section>
+        <section id="about" class="section"><h2>About</h2><p id="about-text"></p></section>
+        <section id="interests" class="section"><h2>Research interests</h2><ul class="compact-list" id="interests-list"></ul></section>
+        <section id="projects" class="section"><h2>Selected projects</h2><div class="cards" id="projects-list"></div></section>
+        <section id="publications" class="section"><h2>Publications</h2><div class="timeline" id="publications-list"></div></section>
+        <section id="talks" class="section"><h2>Talks, tutorials & workshops</h2><div class="timeline" id="talks-list"></div></section>
+        <section id="software" class="section"><h2>Software</h2><div class="cards" id="software-list"></div></section>
+        <section id="education" class="section"><h2>Education</h2><div class="timeline" id="education-list"></div></section>
+        <section id="service" class="section"><h2>Service & community</h2><div class="timeline" id="service-list"></div></section>
 
         <footer class="footer">
           <span id="footer-name">Your Name</span>
@@ -100,237 +63,28 @@
     </div>
 
     <script src="cv-data.js"></script>
-
     <script>
       const data = window.CV_DATA || {};
       const byId = (id) => document.getElementById(id);
-
-      function setText(id, value) {
-        const el = byId(id);
-        if (el) el.textContent = value || "";
-      }
-
-      function hideIfEmpty(sectionId, value) {
-        const el = byId(sectionId);
-        if (!el) return;
-        const empty = !value || (Array.isArray(value) && value.length === 0);
-        if (empty) el.hidden = true;
-      }
-
-      function link(label, url) {
-        if (!url || url === "#") return "";
-        const a = document.createElement("a");
-        a.href = url;
-        a.textContent = label;
-        if (!url.startsWith("mailto:") && !url.startsWith("#")) {
-          a.target = "_blank";
-          a.rel = "noreferrer";
-        }
-        return a;
-      }
-
-      function renderLinks() {
-        const container = byId("links");
-        const links = data.links || [];
-        if (!container) return;
-        container.innerHTML = "";
-        links.forEach((item) => {
-          const a = link(item.label, item.url);
-          if (a) container.appendChild(a);
-        });
-      }
-
-      function renderTags(id, items) {
-        const container = byId(id);
-        if (!container) return;
-        container.innerHTML = "";
-        (items || []).forEach((item) => {
-          const span = document.createElement("span");
-          span.className = "tag";
-          span.textContent = item;
-          container.appendChild(span);
-        });
-      }
-
-      function renderList(id, items) {
-        const container = byId(id);
-        if (!container) return;
-        container.innerHTML = "";
-        (items || []).forEach((item) => {
-          const li = document.createElement("li");
-          li.textContent = item;
-          container.appendChild(li);
-        });
-      }
-
-      function renderCards(id, items) {
-        const container = byId(id);
-        if (!container) return;
-        container.innerHTML = "";
-        (items || []).forEach((item) => {
-          const article = document.createElement("article");
-          article.className = "card";
-
-          const title = document.createElement("h3");
-          title.textContent = item.name || item.title || "Untitled";
-          article.appendChild(title);
-
-          if (item.meta) {
-            const meta = document.createElement("p");
-            meta.className = "meta";
-            meta.textContent = item.meta;
-            article.appendChild(meta);
-          }
-
-          if (item.description) {
-            const desc = document.createElement("p");
-            desc.textContent = item.description;
-            article.appendChild(desc);
-          }
-
-          if (item.tags && item.tags.length) {
-            const tags = document.createElement("div");
-            tags.className = "mini-tags";
-            item.tags.forEach((tag) => {
-              const span = document.createElement("span");
-              span.textContent = tag;
-              tags.appendChild(span);
-            });
-            article.appendChild(tags);
-          }
-
-          if (item.link) {
-            const a = link(item.linkLabel || "Link", item.link);
-            if (a) {
-              a.className = "text-link";
-              article.appendChild(a);
-            }
-          }
-
-          container.appendChild(article);
-        });
-      }
-
-      function renderTimeline(id, items) {
-        const container = byId(id);
-        if (!container) return;
-        container.innerHTML = "";
-        (items || []).forEach((item) => {
-          const article = document.createElement("article");
-          article.className = "timeline-item";
-
-          const year = document.createElement("div");
-          year.className = "year";
-          year.textContent = item.year || "";
-          article.appendChild(year);
-
-          const body = document.createElement("div");
-          body.className = "timeline-body";
-
-          const title = document.createElement("h3");
-          title.textContent = item.title || item.name || "Untitled";
-          body.appendChild(title);
-
-          if (item.venue || item.meta) {
-            const meta = document.createElement("p");
-            meta.className = "meta";
-            meta.textContent = item.venue || item.meta;
-            body.appendChild(meta);
-          }
-
-          if (item.description) {
-            const desc = document.createElement("p");
-            desc.textContent = item.description;
-            body.appendChild(desc);
-          }
-
-          if (item.link) {
-            const a = link(item.linkLabel || "Link", item.link);
-            if (a) {
-              a.className = "text-link";
-              body.appendChild(a);
-            }
-          }
-
-          article.appendChild(body);
-          container.appendChild(article);
-        });
-      }
-
-      function renderContact() {
-        const container = byId("contact");
-        if (!container) return;
-        container.innerHTML = "";
-        (data.contact || []).forEach((item) => {
-          const p = document.createElement("p");
-          const label = document.createElement("strong");
-          label.textContent = item.label + ": ";
-          p.appendChild(label);
-          const a = item.url ? link(item.value, item.url) : null;
-          if (a) p.appendChild(a);
-          else p.appendChild(document.createTextNode(item.value || ""));
-          container.appendChild(p);
-        });
-      }
-
-      function init() {
-        document.title = data.name ? `${data.name} — CV` : "Academic CV";
-        setText("name", data.name);
-        setText("role", data.role);
-        setText("location", data.location);
-        setText("summary", data.shortSummary);
-        setText("about-text", data.about);
-        setText("footer-name", data.name);
-
-        renderLinks();
-        renderTags("keywords", data.keywords);
-        renderContact();
-        renderList("interests-list", data.interests);
-        renderCards("projects-list", data.projects);
-        renderTimeline("publications-list", data.publications);
-        renderTimeline("talks-list", data.talks);
-        renderCards("software-list", data.software);
-        renderTimeline("education-list", data.education);
-        renderTimeline("service-list", data.service);
-
-        hideIfEmpty("keywords-section", data.keywords);
-        hideIfEmpty("contact-section", data.contact);
-      }
-
+      function setText(id, value) { const el = byId(id); if (el) el.textContent = value || ""; }
+      function hideIfEmpty(sectionId, value) { const el = byId(sectionId); if (!el) return; const empty = !value || (Array.isArray(value) && value.length === 0); if (empty) el.hidden = true; }
+      function link(label, url) { if (!url || url === "#") return ""; const a = document.createElement("a"); a.href = url; a.textContent = label; if (!url.startsWith("mailto:") && !url.startsWith("#")) { a.target = "_blank"; a.rel = "noreferrer"; } return a; }
+      function iconForLink(label, url) { const text = `${label || ""} ${url || ""}`.toLowerCase(); if (text.includes("email") || text.includes("mailto:")) return "✉"; if (text.includes("github")) return "GH"; if (text.includes("scholar")) return "🎓"; if (text.includes("linkedin")) return "in"; if (text.includes("bluesky") || text.includes("bsky")) return "🦋"; if (text.includes("twitter") || text.includes("x.com") || label === "X") return "𝕏"; if (text.includes("cv") || text.includes("pdf")) return "CV"; return "↗"; }
+      function renderLinks() { const container = byId("links"); const links = data.links || []; if (!container) return; container.innerHTML = ""; links.forEach((item) => { if (!item.url || item.url === "#") return; const a = link(item.label, item.url); if (!a) return; a.className = "profile-icon-link"; a.title = item.label; a.setAttribute("aria-label", item.label); const icon = document.createElement("span"); icon.setAttribute("aria-hidden", "true"); icon.textContent = iconForLink(item.label, item.url); const sr = document.createElement("span"); sr.className = "sr-only"; sr.textContent = item.label; a.textContent = ""; a.appendChild(icon); a.appendChild(sr); container.appendChild(a); }); }
+      function renderTags(id, items) { const container = byId(id); if (!container) return; container.innerHTML = ""; (items || []).forEach((item) => { const span = document.createElement("span"); span.className = "tag"; span.textContent = item; container.appendChild(span); }); }
+      function renderList(id, items) { const container = byId(id); if (!container) return; container.innerHTML = ""; (items || []).forEach((item) => { const li = document.createElement("li"); li.textContent = item; container.appendChild(li); }); }
+      function renderCards(id, items) { const container = byId(id); if (!container) return; container.innerHTML = ""; (items || []).forEach((item) => { const article = document.createElement("article"); article.className = "card"; const title = document.createElement("h3"); title.textContent = item.name || item.title || "Untitled"; article.appendChild(title); if (item.meta) { const meta = document.createElement("p"); meta.className = "meta"; meta.textContent = item.meta; article.appendChild(meta); } if (item.description) { const desc = document.createElement("p"); desc.textContent = item.description; article.appendChild(desc); } if (item.tags && item.tags.length) { const tags = document.createElement("div"); tags.className = "mini-tags"; item.tags.forEach((tag) => { const span = document.createElement("span"); span.textContent = tag; tags.appendChild(span); }); article.appendChild(tags); } if (item.link) { const a = link(item.linkLabel || "Link", item.link); if (a) { a.className = "text-link"; article.appendChild(a); } } container.appendChild(article); }); }
+      function renderTimeline(id, items) { const container = byId(id); if (!container) return; container.innerHTML = ""; (items || []).forEach((item) => { const article = document.createElement("article"); article.className = "timeline-item"; const year = document.createElement("div"); year.className = "year"; year.textContent = item.year || ""; article.appendChild(year); const body = document.createElement("div"); body.className = "timeline-body"; const title = document.createElement("h3"); title.textContent = item.title || item.name || "Untitled"; body.appendChild(title); if (item.venue || item.meta) { const meta = document.createElement("p"); meta.className = "meta"; meta.textContent = item.venue || item.meta; body.appendChild(meta); } if (item.description) { const desc = document.createElement("p"); desc.textContent = item.description; body.appendChild(desc); } if (item.link) { const a = link(item.linkLabel || "Link", item.link); if (a) { a.className = "text-link"; body.appendChild(a); } } article.appendChild(body); container.appendChild(article); }); }
+      function init() { document.title = data.name ? `${data.name} — CV` : "Academic CV"; setText("name", data.name); setText("role", data.role); setText("location", data.location); setText("summary", data.shortSummary); setText("about-text", data.about); setText("footer-name", data.name); renderLinks(); renderTags("keywords", data.keywords); renderList("interests-list", data.interests); renderCards("projects-list", data.projects); renderTimeline("publications-list", data.publications); renderTimeline("talks-list", data.talks); renderCards("software-list", data.software); renderTimeline("education-list", data.education); renderTimeline("service-list", data.service); hideIfEmpty("about", data.about); hideIfEmpty("interests", data.interests); hideIfEmpty("projects", data.projects); hideIfEmpty("publications", data.publications); hideIfEmpty("talks", data.talks); hideIfEmpty("software", data.software); hideIfEmpty("education", data.education); hideIfEmpty("service", data.service); }
       init();
     </script>
-
     <script>
       const themeToggle = document.getElementById("theme-toggle");
-
-      function applyTheme(theme) {
-        document.documentElement.setAttribute("data-theme", theme);
-        localStorage.setItem("theme", theme);
-
-        if (themeToggle) {
-          themeToggle.textContent = theme === "dark" ? "☀️ Light mode" : "🌙 Dark mode";
-          themeToggle.setAttribute(
-            "aria-label",
-            theme === "dark" ? "Switch to light mode" : "Switch to dark mode"
-          );
-        }
-      }
-
+      function applyTheme(theme) { document.documentElement.setAttribute("data-theme", theme); localStorage.setItem("theme", theme); if (themeToggle) { themeToggle.textContent = theme === "dark" ? "☀️ Light mode" : "🌙 Dark mode"; themeToggle.setAttribute("aria-label", theme === "dark" ? "Switch to light mode" : "Switch to dark mode"); } }
       const savedTheme = localStorage.getItem("theme");
-      const prefersDark =
-        window.matchMedia &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches;
-      const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
-
-      applyTheme(initialTheme);
-
-      if (themeToggle) {
-        themeToggle.addEventListener("click", () => {
-          const currentTheme =
-            document.documentElement.getAttribute("data-theme") || "light";
-          applyTheme(currentTheme === "dark" ? "light" : "dark");
-        });
-      }
+      const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+      applyTheme(savedTheme || (prefersDark ? "dark" : "light"));
+      if (themeToggle) { themeToggle.addEventListener("click", () => { const currentTheme = document.documentElement.getAttribute("data-theme") || "light"; applyTheme(currentTheme === "dark" ? "light" : "dark"); }); }
     </script>
   </body>
 </html>
