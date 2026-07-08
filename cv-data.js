@@ -56,7 +56,16 @@ window.CV_DATA = {
     image: "media/SID_new.gif",
     description:
       "We live in (economic systems, social networks, transport routes, ecology, etc) and we are (immunity systems, thoughts, cells, etc) complex adaptive systems where the number of entities and thus their connections continuously keeps changing. Certain traits of such systems remain robust, and certain traits evolve (often power scaling). I aim to better our understanding of such systems by modelling them computationally.",
-    tags: ["dynamic populations", "complex systems", "scaling"]
+    tags: [
+    {
+      label: "Scale: The Universal Laws of Life and Death in Organisms, Cities and Companies",
+      url: "https://indico.cern.ch/event/1049159/attachments/2271054/3856975/CERN_6-21.pdf"
+    },
+    {
+      label: "Introduction to the Theory of Complex Systems",
+      url: "https://www.academia.edu/93423257/Introduction_to_the_Theory_of_Complex_Systems"
+    }
+  ]
   },
   {
     name: "Collective and Diverse Intelligence",
