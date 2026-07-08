@@ -137,7 +137,7 @@ window.CV_DATA = {
       title: "Dynamic energy budgeting using potential-based reward function",
       authors: "Siddharth Chaturvedi",
       venue: "M.Sc. thesis under Dr. Federico Califano, RAM lab, University of Twente",
-      description: "Combine energy budgets with reinforcement learning to attain dynamic passivity in autonomous robots",
+      description: "Combining energy budgets with reinforcement learning to attain dynamic passivity in autonomous robots.",
       link: "https://essay.utwente.nl/",
       linkLabel: "Thesis"
     }
