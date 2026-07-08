@@ -260,11 +260,29 @@ window.CV_DATA = {
   software: [
     {
       name: "ABMax",
-      meta: "Open-source software",
+      meta: "A general agent-based modelling framework.",
       description:
-        "JAX-based tools and examples for dynamic-population agent-based modelling.",
-      tags: ["Python", "JAX", "simulation"],
+        "A simple API to handle agent-based functionality and two algorithms to apply conflict management kernels. These update can be vectorized across a model population.",
+      tags: ["Python", "JAX"],
       link: "https://github.com/i-m-iron-man/abmax",
+      linkLabel: "Repository"
+    },
+    {
+      name: "Neural Energy Aware Robotics",
+      meta: "MSc thesis code",
+      description:
+        "Dynamic energy budgeting and behavioural shaping along complex task execution in robotics using reinforcement learning.",
+      tags: ["Python", "Pytorch", "Mujoco"],
+      link: "https://github.com/i-m-iron-man/Neural_Energy_Aware_Robotics",
+      linkLabel: "Repository"
+    },
+    {
+      name: "libtorch mujoco C++",
+      meta: "just for fun and torch-er",
+      description:
+        "A C++ implementation of DDPG algoritm from RL, to solve the inverted-pendulum task.",
+      tags: ["C++", "libtorch", "Mujoco"],
+      link: "https://github.com/i-m-iron-man/libtorch_mujoco_DDPG",
       linkLabel: "Repository"
     }
   ],
