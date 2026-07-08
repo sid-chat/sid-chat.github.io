@@ -102,17 +102,35 @@ window.CV_DATA = {
       venue: "Artificial Life, 2026, (Accepted)",
       description:
         "Agent-based model to study role differentiation, resource use, and group-level selection in a shared-resource ecology.",
-      link: "#",
-      linkLabel: "Add link"
+      link: "https://arxiv.org/pdf/2604.00810",
+      linkLabel: "Pre-print"
     },
     {
-      year: "2026",
-      title: "Complex systems paper in the GECCO Complex Systems track",
-      venue: "GECCO 2026",
-      description:
-        "Replace this placeholder with the exact paper title, authors, and proceedings link.",
-      link: "#",
-      linkLabel: "Add link"
+      year: "2025",
+      title: "Emergence of Internal State-Modulated Swarming in Multi-Agent Patch Foraging System",
+      authors: "Siddharth Chaturvedi, Ahmed, El-Gazzar, Marcel van Gerven",
+      venue: "GECCO, 2026 (Accepted)",
+      description: "A model showing that swarming in partially-observable multi-agent patch foraging systems depends on the internal state representing the virtual hunger or resource levels of the foragers",
+      link: "https://arxiv.org/pdf/2510.18886",
+      linkLabel: "Pre-print"
+    },
+    {
+      year: "2025",
+      title: "ABMax: A JAX-based Agent-based Modeling Framework",
+      authors: "Siddharth Chaturvedi, Ahmed, El-Gazzar, Marcel van Gerven",
+      venue: "EUROSIM, 2026 (Accepted)",
+      description: "An efficient and scalable agent-based modelling framework based on JAX that can handle dynamic population size and conflict management.",
+      link: "https://arxiv.org/pdf/2508.16508",
+      linkLabel: "Pre-print"
+    },
+    {
+      year: "2024",
+      title: "A dynamical systems approach to optimal foraging",
+      authors: "Siddharth Chaturvedi, Ahmed, El-Gazzar, Marcel van Gerven",
+      venue: "PLOS Complex Systems",
+      description: "A model formulating a CTRNN foraging from two resource patches as a continuous coupled dynamical system.",
+      link: "https://journals.plos.org/complexsystems/article?id=10.1371/journal.pcsy.0000018",
+      linkLabel: "Article"
     }
   ],
 
