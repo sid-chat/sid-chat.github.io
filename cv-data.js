@@ -69,11 +69,24 @@ window.CV_DATA = {
   },
   {
     name: "Collective and Diverse Intelligence",
-    meta: "Placeholder",
+    meta: "Is the traditional cognitive science inspired intelligence the only mechanism by which general intelligence can be realized?",
     image: "media/collective_diverse_intelligence.png",
     description:
-      "Placeholder text. Add a short description here about collective intelligence, diversity, embodied cognition, and how many interacting agents produce adaptive group-level behavior.",
-    tags: ["collective intelligence", "diversity", "embodiment"]
+      "Maybe the way a biological brain produces intelligence is just one mechanism to functionally realize intelligence. Like an island in the sea. Maybe there are other islands in the sea. Maybe these other islands are more efficient when realized in-silico.",
+    tags: [
+    {
+      label: "Intelligence as remapping and navigation of an embedding space",
+      url: "https://arxiv.org/pdf/2601.14096"
+    },
+    {
+      label: "Collective and Diverse Intelligence",
+      url: "https://blog.donders.ru.nl/collective-and-diverse-intelligence-something-beyond-cognitive-science/?lang=en"
+    },
+    {
+      label: "Other Minds",
+      url: "https://www.goodreads.com/en/book/show/28116739-other-minds"
+    }  
+  ]
   },
   {
     name: "Vectorized Algorithms",
