@@ -313,7 +313,7 @@ window.CV_DATA = {
     },
     {
       year: "2014 - 2018",
-      title: "B.E Mechanical Engineering",
+      title: "B.E. Mechanical Engineering",
       venue: "BITS Pilani, Hyderabad, India",
       description:
         ""
