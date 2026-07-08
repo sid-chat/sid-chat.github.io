@@ -8,8 +8,7 @@ window.CV_DATA = {
   location: "",
   shortSummary: "",
   about: `Namaste and welcome to my website.
-  Professionally: I am a mechanical and control engineer who began doing a PhD in the field of AI and is now concluding it in the field of complex systems. I am currently part of the <a href="https://dbi2.nl/" target="_blank" rel="noreferrer">Dutch Brain Interface Initiative (DBI2)</a> consortium and am supervised by <a href="https://www.ru.nl/en/people/gerven-m-van" target="_blank" rel="noreferrer">Prof. Marcel van Gerven</a>.
-  Not professionally: Robot-maker, guitar-player, blog-writer, hike-master, salsa-dancer, slow-swimmer, animal-lover.
+  I am a mechanical and control engineer who began doing a PhD in the field of AI and is now concluding it in the field of complex systems. I am currently part of the <a href="https://dbi2.nl/" target="_blank" rel="noreferrer">Dutch Brain Interface Initiative (DBI2)</a> consortium and am supervised by <a href="https://www.ru.nl/en/people/gerven-m-van" target="_blank" rel="noreferrer">Prof. Marcel van Gerven</a>.
   `,
   links: [
     { label: "Email", url: "mailto:siddharth.chaturvedi@donders.ru.nl" },
@@ -183,7 +182,7 @@ window.CV_DATA = {
   talks: [
     {
       year: "2026",
-      title: "Tutorial on using Genetic Programming to design Complex Adaptive Systems",
+      title: "Tutorial on using Genetic Programming to design Complex Adaptive Systems.",
       authors: "Siddharth Chaturvedi, Sigur de Vries",
       venue: "Simulation of Adaptive Behaviour, 2026, Berlin (Accepted)",
       description:
@@ -193,7 +192,7 @@ window.CV_DATA = {
     },
     {
       year: "2025",
-      title: "Foragax: Large-Scale Agent-Based Modeling of Adaptive Multi-Agent Foraging",
+      title: "Foragax: Large-Scale Agent-Based Modeling of Adaptive Multi-Agent Foraging.",
       venue: "The Mechanistic Basis of Foraging, 2025, Birmingham",
       description:
         "",
@@ -202,12 +201,21 @@ window.CV_DATA = {
     },
     {
       year: "2025",
-      title: "ABMax: an agent-based modelling framework based in JAX",
+      title: "ABMax: an agent-based modelling framework based in JAX.",
       venue: "Dutch Sequential Decision Making meeting, Eindhoven",
       description:
         "",
       link: "https://www.lnmb.nl/pages/courses/phdcourses/SDM/",
       linkLabel: "Event website"
+    },
+    {
+      year: "2025",
+      title: "An introduction to agent-based modelling using ABMax.",
+      venue: "Guest lecture, Complex Adaptive Systems (M.Sc. course), Radboud University, Nijmegen",
+      description:
+        "",
+      link: "https://ru.osiris-student.nl/onderwijscatalogus/extern/cursus?cursuscode=SOW-MKI49&collegejaar=2026",
+      linkLabel: "Course website"
     },
     {
       year: "2024",
@@ -217,6 +225,33 @@ window.CV_DATA = {
         "",
       link: "https://www.pintofscience.nl/event/questions-that-move-science-day-3/",
       linkLabel: "Event website"
+    },
+    {
+      year: "2024",
+      title: "An introduction to optimal foraging theory.",
+      venue: "Guest lecture, Complex Adaptive Systems (M.Sc. course), Radboud University, Nijmegen",
+      description:
+        "",
+      link: "https://ru.osiris-student.nl/onderwijscatalogus/extern/cursus?cursuscode=SOW-MKI49&collegejaar=2026",
+      linkLabel: "Course website"
+    },
+    {
+      year: "2023",
+      title: "An introduction to agent-based AI.",
+      venue: "Guest lecture, AI Hons. Bachelor, Radboud University, Nijmegen",
+      description:
+        "",
+      link: "https://ru.osiris-student.nl/onderwijscatalogus/extern/cursus?cursuscode=SOW-MKI49&collegejaar=2026",
+      linkLabel: "Course website"
+    },
+    {
+      year: "2023",
+      title: "What can we do with AI?",
+      venue: "Guest lecture, Bachelor's experience day artificial intelligence, Radboud University, Nijmegen",
+      description:
+        "",
+      link: "",
+      linkLabel: ""
     }
     
     
