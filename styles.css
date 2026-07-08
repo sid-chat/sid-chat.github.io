@@ -405,3 +405,44 @@ html[data-theme="dark"] .card { background: rgba(255, 255, 255, 0.035); }
   }
   .cards { grid-template-columns: 1fr; }
 }
+
+
+/* Polished profile icons: conventional GitHub mark and larger email icon. */
+.profile-icon-link {
+  width: 40px;
+  height: 40px;
+}
+
+.profile-icon-symbol {
+  display: inline-grid;
+  place-items: center;
+  line-height: 1;
+}
+
+.profile-icon-link svg {
+  width: 21px;
+  height: 21px;
+  display: block;
+  fill: currentColor;
+}
+
+.profile-icon-link.email-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.profile-icon-link.github-icon svg {
+  width: 23px;
+  height: 23px;
+}
+
+.profile-icon-link.linkedin-icon {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+}
+
+.profile-icon-link.cv-icon {
+  font-size: 0.78rem;
+  letter-spacing: 0.02em;
+}
