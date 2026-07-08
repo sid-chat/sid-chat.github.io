@@ -65,7 +65,7 @@ window.CV_DATA = {
   {
     name: "Vectorized Algorithms",
     meta: "Placeholder",
-    image: "media/vectorized-algorithms.svg",
+    image: "media/seq_to_vec.png",
     description:
       "Placeholder text. Add a short description here about vectorized simulation, accelerator-friendly algorithms, JAX, batching, and scalable computational models.",
     tags: ["JAX", "vectorization", "simulation"]
