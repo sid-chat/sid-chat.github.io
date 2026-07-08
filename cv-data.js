@@ -83,6 +83,16 @@ window.CV_DATA = {
   publications: [
     {
       year: "2026",
+      title: "Tuning Agent-Based Predator-Prey Models Toward Lotka-Volterra Dynamics",
+      authors: "Corinna Mandl, Siddharth Chaturvedi, Marcel van Gerven"
+      venue: "Simulation of Adaptive Behaviour (Accepted)",
+      description:
+        "Using an engineered fitness function to tune a predator-prey continuous ABM towards Lotka-Volterra dynamics in a top-down manner.",
+      link: "https://arxiv.org/pdf/2606.13639",
+      linkLabel: "Add link"
+    },
+    {
+      year: "2026",
       title: "Role differentiation in a shared-resource ecology under multi-level selection",
       venue: "ALIFE 2026",
       description:
