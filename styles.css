@@ -463,3 +463,8 @@ html[data-theme="dark"] .card { background: rgba(255, 255, 255, 0.035); }
   border: 1px solid var(--line);
   background: var(--tag);
 }
+.authors {
+  color: var(--ink);
+  font-size: 0.95rem;
+  margin-bottom: 6px;
+}
