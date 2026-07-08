@@ -497,3 +497,18 @@ html[data-theme="dark"] .card { background: rgba(255, 255, 255, 0.035); }
   font-size: 0.95rem;
   margin-bottom: 6px;
 }
+
+
+/* Optional intro paragraph for sections such as Supervision */
+.section-intro {
+  color: var(--muted);
+  max-width: 72ch;
+  margin-bottom: 22px;
+  white-space: pre-line;
+}
+
+
+/* Partial bold styling for display name */
+#name strong {
+  font-weight: 900;
+}
