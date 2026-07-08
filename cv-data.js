@@ -107,11 +107,20 @@ window.CV_DATA = {
   },
   {
     name: "Emergence in Multi-Agent Systems",
-    meta: "How and why do simple multi-agent systems ",
+    meta: "How and why does cooperation emerge in purely competitive agents?",
     image: "media/foraging_swarm.gif",
     description:
-      "Placeholder text. Add a short description here about coordination, role differentiation, cooperation, competition, and emergent structure in multi-agent systems.",
-    tags: ["multi-agent systems", "emergence", "coordination"]
+      "Simulations of non-cooperative agents foraging from common resources show the emergence of coordination among them. This can occur, for instance, through aggregation or role differentiation. The aim is to understand what factors lead to such emergence and how we can control it. A broader aim is to study open-endedness as a function of the number of agents coordinating to outperform other coalitions.",
+    tags: [
+    {
+      label: "Emergence of aggregation",
+      url: "https://arxiv.org/pdf/2510.18886"
+    },
+    {
+      label: "Emergence of role-differentiation",
+      url: "https://arxiv.org/pdf/2604.00810"
+    }  
+  ]
   }
 ],
 
