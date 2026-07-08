@@ -7,7 +7,7 @@ window.CV_DATA = {
   role: "PhD candidate,\nArtificial Cognitive Systems lab,\nDonders Institute,\nRadboud University",
   location: "",
   shortSummary:
-    "Complex Adaptive Systems,\nAgent-based Models,\nCollective & Diverse Intelligence, \nJAX",
+    "",
   about:
     "Namaste and welcome to my website. \n\nProfessionally: I am a mechanical and control engineer who began doing a PhD in the field of AI and is now concluding it in the field of complex systems. \n\n Not Professionally: Robot-maker, Guitar-player, Blog-writer, Hike-master, Salsa-dancer, Slow-swimmer, Animal-lover",
 
@@ -36,7 +36,8 @@ window.CV_DATA = {
 
   keywords: [
     "Agent-based modelling",
-    "Complex systems",
+    "Complex adaptive systems",
+    "Collective and Diverse Intelligence"
     "Artificial life",
     "Multi-agent systems",
     "JAX",
