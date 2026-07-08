@@ -52,10 +52,10 @@ window.CV_DATA = {
   researchInterests: [
   {
     name: "Scaling of Complex Adaptive Systems",
-    meta: "Dynamic populations across domains",
+    meta: "What happens when the number of entities in a complex adaptive system changes over time?",
     image: "media/SID_new.gif",
     description:
-      "How do complex systems change when their number of entities changes over time? This theme connects agent birth, death, interaction, and reorganization across animals, cars, buildings, neurons, and artificial agents.",
+      "We live in (economic systems, social networks, transport routes, ecology, etc) and we are (immunity systems, thoughts, cells, etc) complex adaptive systems where the number of entities continuously keeps changing. Certain qualities of such systems remain robust, and certain quantities evolve (often power scaling). I aim to better our understanding of such systems by modelling them computationally.",
     tags: ["dynamic populations", "complex systems", "scaling"]
   },
   {
