@@ -125,6 +125,12 @@
         element.textContent = value || "";
       }
 
+      function setHtml(id, value) {
+        const element = byId(id);
+        if (!element) return;
+        element.innerHTML = value || "";
+      }
+
       function hideIfEmpty(sectionId, value) {
         const element = byId(sectionId);
         if (!element) return;
@@ -245,9 +251,60 @@
         (items || []).forEach((item) => {
           const span = document.createElement("span");
           span.className = "tag";
-          span.textContent = item;
+          span.textContent =
+            typeof item === "object"
+              ? item.label || item.name || ""
+              : item;
+
           container.appendChild(span);
         });
+      }
+
+      function tagLabel(tag) {
+        if (typeof tag === "object") {
+          return tag.label || tag.name || tag.title || "";
+        }
+
+        return tag;
+      }
+
+      function tagUrl(tag) {
+        if (typeof tag === "object") {
+          return tag.url || tag.link || "";
+        }
+
+        return "";
+      }
+
+      function renderMiniTags(tags, parent) {
+        if (!tags || !tags.length) return;
+
+        const container = document.createElement("div");
+        container.className = "mini-tags";
+
+        tags.forEach((tag) => {
+          const label = tagLabel(tag);
+          const url = tagUrl(tag);
+
+          if (!label) return;
+
+          const tagElement = url
+            ? document.createElement("a")
+            : document.createElement("span");
+
+          tagElement.textContent = label;
+
+          if (url) {
+            tagElement.href = url;
+            tagElement.target = "_blank";
+            tagElement.rel = "noreferrer";
+            tagElement.setAttribute("aria-label", `Open ${label}`);
+          }
+
+          container.appendChild(tagElement);
+        });
+
+        parent.appendChild(container);
       }
 
       function renderCards(id, items) {
@@ -285,18 +342,7 @@
             article.appendChild(description);
           }
 
-          if (item.tags && item.tags.length) {
-            const tags = document.createElement("div");
-            tags.className = "mini-tags";
-
-            item.tags.forEach((tag) => {
-              const span = document.createElement("span");
-              span.textContent = tag;
-              tags.appendChild(span);
-            });
-
-            article.appendChild(tags);
-          }
+          renderMiniTags(item.tags, article);
 
           if (item.link) {
             const anchor = link(item.linkLabel || "Link", item.link);
@@ -358,15 +404,11 @@
 
             if (anchor) {
               anchor.className = "text-link";
-              article.appendChild(body);
               body.appendChild(anchor);
             }
           }
 
-          if (!article.contains(body)) {
-            article.appendChild(body);
-          }
-
+          article.appendChild(body);
           container.appendChild(article);
         });
       }
@@ -378,11 +420,8 @@
         setText("role", data.role);
         setText("location", data.location);
         setText("summary", data.shortSummary);
+        setHtml("about-text", data.about);
         setText("footer-name", data.name);
-        const aboutText = byId("about-text");
-        if (aboutText) {
-            aboutText.innerHTML = data.about || "";
-        }
 
         renderLinks();
         renderTags("keywords", data.keywords);
