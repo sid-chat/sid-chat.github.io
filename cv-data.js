@@ -57,7 +57,7 @@ window.CV_DATA = {
   {
     name: "Collective and Diverse Intelligence",
     meta: "Placeholder",
-    image: "media/collective-diverse-intelligence.svg",
+    image: "media/collective_diverse_intelligence.png",
     description:
       "Placeholder text. Add a short description here about collective intelligence, diversity, embodied cognition, and how many interacting agents produce adaptive group-level behavior.",
     tags: ["collective intelligence", "diversity", "embodiment"]
