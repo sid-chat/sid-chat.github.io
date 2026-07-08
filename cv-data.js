@@ -49,7 +49,7 @@ window.CV_DATA = {
   {
     name: "Scaling of Complex Adaptive Systems",
     meta: "Dynamic populations across domains",
-    image: "media/scaling-complex-systems.gif",
+    image: "media/SID_new.gif",
     description:
       "How do complex systems change when their number of entities changes over time? This theme connects agent birth, death, interaction, and reorganization across animals, cars, buildings, neurons, and artificial agents.",
     tags: ["dynamic populations", "complex systems", "scaling"]
