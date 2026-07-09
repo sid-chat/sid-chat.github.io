@@ -322,19 +322,64 @@ window.CV_DATA = {
   ],
 
   supervisionIntro:
-    "I was the direct daily supervisor of the following projects.",
+    "Involved in daily supervision of the following projects.",
 
   supervision: [
     {
       year: "2026",
-      title: "Student project title",
-      venue: "Role: project support / technical guidance / co-supervision",
-      description:
-        "Replace this placeholder with a short description of the student project and what you contributed.",
-      tags: ["student project", "supervision", "research support"],
+      title: "From Temporal to State-Dependent Control in QOS-OFA",
+      venue: "Sandro Kvrgić (B.Sc. Hons.)",
+      description:"",
+      tags: [],
       link: "#",
-      linkLabel: "Add link"
+      linkLabel: ""
+    },
+    {
+      year: "2026",
+      title: "Tuning Agent-Based Predator-Prey Models Toward Lotka-Volterra Dynamics",
+      venue: "Corinna Mandl (B.Sc. Hons.)",
+      description:"",
+      tags: [],
+      link: "#",
+      linkLabel: ""
+    },
+    {
+      year: "2026",
+      title: "TD3-Based Resource Allocation for Indirect Population Control in Multi-Agent Environments",
+      venue: "Steven Kocken (M.Sc.)",
+      description:"",
+      tags: [],
+      link: "#",
+      linkLabel: ""
+    },
+    {
+      year: "2025",
+      title: "ABM Traffic",
+      venue: "Joep Saris (B.Sc.)",
+      description:"",
+      tags: [],
+      link: "#",
+      linkLabel: ""
+    },
+    {
+      year: "2025",
+      title: "Designing an ABM in JAX using ABMax to simulate a simplified stock market",
+      venue: "Sybren van den Heuvel (B.Sc.)",
+      description:"",
+      tags: [],
+      link: "#",
+      linkLabel: ""
+    },
+    {
+      year: "2025",
+      title: "Effects of communication by RL-agents in a single-patch foraging environment",
+      venue: "Senna Renting (B.Sc. Hons.)",
+      description:"",
+      tags: [],
+      link: "#",
+      linkLabel: ""
     }
+    
   ],
 
   service: [
