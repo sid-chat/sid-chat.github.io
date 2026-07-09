@@ -6,10 +6,7 @@ window.CV_DATA = {
   nameHindi: "सिद्धार्थ चतुर्वेदी",
   initials: "SC",
   role: "PhD candidate,\nArtificial Cognitive Systems lab,\nDonders Institute,\nRadboud University",
-  roleHtml: `PhD candidate,<br>
-<a href="https://www.ru.nl/en/departments/donders-centre-for-cognition/artificial-cognitive-systems" target="_blank" rel="noreferrer">Artificial Cognitive Systems lab</a>,<br>
-<a href="https://www.ru.nl/en/donders-institute" target="_blank" rel="noreferrer">Donders Institute</a>,<br>
-<a href="https://www.ru.nl/en" target="_blank" rel="noreferrer">Radboud University</a>`,
+  roleHtml: `PhD candidate,<br><a href="https://www.ru.nl/en/departments/donders-centre-for-cognition/artificial-cognitive-systems" target="_blank" rel="noreferrer">Artificial Cognitive Systems lab</a>,<br><a href="https://www.ru.nl/en/donders-institute" target="_blank" rel="noreferrer">Donders Institute</a>,<br><a href="https://www.ru.nl/en" target="_blank" rel="noreferrer">Radboud University</a>`,
   location: "",
   shortSummary: "I build and analyze efficient computational models of complex adaptive systems.",
   about: `Namaste and welcome to my website.
