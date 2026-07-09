@@ -552,3 +552,25 @@ html[data-theme="dark"] .role a {
 .summary {
   margin-bottom: 14px;
 }
+/* Keep role links visually like normal role text */
+.profile-card .role a,
+.profile-card .role a:visited {
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(23, 74, 124, 0.22);
+}
+
+.profile-card .role a:hover {
+  color: var(--accent);
+  border-bottom-color: var(--accent);
+}
+
+html[data-theme="dark"] .profile-card .role a,
+html[data-theme="dark"] .profile-card .role a:visited {
+  color: var(--ink);
+  border-bottom-color: rgba(143, 189, 242, 0.28);
+}
+
+html[data-theme="dark"] .profile-card .role a:hover {
+  color: var(--accent);
+}
