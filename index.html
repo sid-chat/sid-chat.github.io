@@ -31,6 +31,7 @@
           />
 
           <h1 id="name">Your Name</h1>
+          <p class="name-hindi" id="name-hindi"></p>
           <p class="role" id="role">Your role</p>
 
           <div
@@ -425,7 +426,8 @@
       function init() {
         document.title = data.name ? `${data.name} — CV` : "Academic CV";
 
-        setHtml("name", data.displayNameHtml || data.name);
+        setText("name", data.name);
+        setText("name-hindi", data.nameHindi);
         setText("role", data.role);
         setText("location", data.location);
         setText("summary", data.shortSummary);
