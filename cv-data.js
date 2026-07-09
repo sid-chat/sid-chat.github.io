@@ -7,7 +7,7 @@ window.CV_DATA = {
   initials: "SC",
   role: "PhD candidate,\nArtificial Cognitive Systems lab,\nDonders Institute,\nRadboud University",
   location: "",
-  shortSummary: "",
+  shortSummary: "I build and analyze efficient computational models of complex adaptive systems.",
   about: `Namaste and welcome to my website.
   I am a mechanical and control engineer who began doing a PhD in the field of AI and is now concluding it in the field of complex systems. I am currently part of the <a href="https://dbi2.nl/" target="_blank" rel="noreferrer">Dutch Brain Interface Initiative (DBI2)</a> consortium and am supervised by <a href="https://www.ru.nl/en/people/gerven-m-van" target="_blank" rel="noreferrer">Prof. Marcel van Gerven</a>.
   `,
