@@ -76,10 +76,10 @@ html[data-theme="dark"] .theme-toggle { background: rgba(23, 31, 42, 0.96); }
 .page {
   width: min(1280px, calc(100% - 32px));
   margin: 0 auto;
-  padding: 48px 0 64px;
   display: grid;
   grid-template-columns: 340px minmax(0, 1fr);
-  gap: 32px;
+  gap: 28px;
+  padding: 42px 0 64px;
 }
 .sidebar {
   position: sticky;
@@ -114,12 +114,13 @@ html[data-theme="dark"] .section {
 }
 h1, h2, h3, p { margin-top: 0; }
 h1 {
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-family: "Avenir Next", Avenir, "Nunito Sans", "Inter", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 1.45rem;
   line-height: 1.12;
-  letter-spacing: -0.035em;
-  margin-bottom: 8px;
+  letter-spacing: -0.025em;
+  margin-bottom: 4px;
   white-space: nowrap;
+  font-weight: 500;
 }
 h2 {
   font-size: 0.92rem;
@@ -208,7 +209,13 @@ html[data-theme="dark"] .profile-icon-link { background: rgba(23, 31, 42, 0.92);
 }
 html[data-theme="dark"] .links a,
 html[data-theme="dark"] .top-nav a {
-  background: rgba(23, 31, 42, 0.92);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 7px 10px;
+  color: var(--muted);
+  text-decoration: none;
+  background: var(--paper);
+  white-space: nowrap;
 }
 .links a:hover, .text-link:hover, .print-button:hover { text-decoration: underline; }
 .links a:hover {
@@ -267,12 +274,14 @@ html[data-theme="dark"] .mini-tags a {
 .top-nav {
   position: sticky;
   top: 0;
-  z-index: 2;
+  z-index: 20;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 8px;
   padding: 12px 0 18px;
-  background: linear-gradient(to bottom, var(--bg) 65%, rgba(247, 244, 239, 0));
+  margin-bottom: 10px;
+  background: linear-gradient(180deg, var(--bg) 75%, rgba(250, 247, 242, 0));
+  overflow-x: auto;
 }
 html[data-theme="dark"] .top-nav {
   background: linear-gradient(to bottom, var(--bg) 65%, rgba(16, 21, 29, 0));
@@ -371,7 +380,7 @@ html[data-theme="dark"] .card { background: rgba(255, 255, 255, 0.035); }
   }
   h1 {
     white-space: normal;
-    font-size: 1.7rem;
+    font-size: 1.55rem;
   }
   .profile-card, .side-section, .section { border-radius: 14px; }
   .profile-card, .section { padding: 22px; }
@@ -508,7 +517,15 @@ html[data-theme="dark"] .card { background: rgba(255, 255, 255, 0.035); }
 }
 
 
-/* Partial bold styling for display name */
-#name strong {
-  font-weight: 900;
+
+
+/* Hindi name below the main name */
+.name-hindi {
+  font-family: "Noto Sans Devanagari", "Kohinoor Devanagari", "Mangal", "Avenir Next", Avenir, system-ui, sans-serif;
+  color: var(--muted);
+  font-size: 0.95rem;
+  font-weight: 500;
+  line-height: 1.35;
+  margin: 0 0 10px;
+  letter-spacing: 0;
 }
