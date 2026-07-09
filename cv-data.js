@@ -3,7 +3,7 @@
 
 window.CV_DATA = {
   name: "Siddharth Chaturvedi",
-  displayNameHtml: "<strong>Sid</strong>dharth <strong>Chat</strong>urvedi",
+  nameHindi: "सिद्धार्थ चतुर्वेदी",
   initials: "SC",
   role: "PhD candidate,\nArtificial Cognitive Systems lab,\nDonders Institute,\nRadboud University",
   location: "",
