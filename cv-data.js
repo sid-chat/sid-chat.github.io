@@ -384,11 +384,33 @@ window.CV_DATA = {
 
   service: [
     {
-      year: "2024",
-      title: "PON PhD Day organization",
-      venue: "PhD Organization Nijmegen",
-      description:
-        "Organized community and academic events for PhD researchers."
-    }
+      year: "2025",
+      title: "Artificial Life 2026",
+      venue: "Reviewer",
+      description:""
+    },
+    {
+      year: "2025",
+      title: "PLOS Complex Systems",
+      venue: "Reviewer",
+      description:""
+    },
+    {
+      year: "2023 - Present",
+      title: "Donders Wonders",
+      venue: "Blogger",
+      link:"https://blog.donders.ru.nl/author/siddharth/?lang=en",
+      linkLabel: "My blogs"
+    },
+    {
+      year: "2023 - Present",
+      title: "PhD Organization Nijmegen",
+      venue: "Se",
+      link:"https://blog.donders.ru.nl/author/siddharth/?lang=en",
+      linkLabel: "My blogs"
+    },
+    
+    
+    
   ]
 };
