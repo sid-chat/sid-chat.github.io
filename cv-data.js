@@ -322,7 +322,7 @@ window.CV_DATA = {
   ],
 
   supervisionIntro:
-    "Involved in daily supervision of the following projects.",
+    "Responsible for the daily supervision of the following projects.",
 
   supervision: [
     {
