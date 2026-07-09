@@ -74,7 +74,7 @@ html[data-theme="dark"] body {
 }
 html[data-theme="dark"] .theme-toggle { background: rgba(23, 31, 42, 0.96); }
 .page {
-  width: min(1180px, calc(100% - 32px));
+  width: min(1280px, calc(100% - 32px));
   margin: 0 auto;
   padding: 48px 0 64px;
   display: grid;
@@ -271,7 +271,7 @@ html[data-theme="dark"] .mini-tags a {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding: 12px 0 20px;
+  padding: 12px 0 18px;
   background: linear-gradient(to bottom, var(--bg) 65%, rgba(247, 244, 239, 0));
 }
 html[data-theme="dark"] .top-nav {
