@@ -34,14 +34,14 @@
           <p class="name-hindi" id="name-hindi"></p>
           <p class="role" id="role">Your role</p>
 
+          <p class="location" id="location"></p>
+          <p class="summary" id="summary"></p>
+
           <div
             class="tags profile-keywords"
             id="keywords"
             aria-label="Research keywords"
           ></div>
-
-          <p class="location" id="location"></p>
-          <p class="summary" id="summary"></p>
 
           <div
             class="profile-icons"
@@ -428,7 +428,10 @@
 
         setText("name", data.name);
         setText("name-hindi", data.nameHindi);
-        setText("role", data.role);
+        setHtml(
+          "role",
+          data.roleHtml || (data.role || "").replace(/\n/g, "<br>")
+        );
         setText("location", data.location);
         setText("summary", data.shortSummary);
         setHtml("about-text", data.about);
