@@ -396,6 +396,14 @@ window.CV_DATA = {
       description:""
     },
     {
+      year: "2024 - 2026",
+      title: "Donders Lectures and Sessions Committee",
+      venue: "Theme 4 representative",
+      description: "Responsible for organizing the Donders Sessions and Donders Lectures",
+      link:"https://www.ru.nl/en/donders-institute/agenda/donders-sessions",
+      linkLabel: "Website"
+    },
+    {
       year: "2023 - Present",
       title: "Donders Wonders",
       venue: "Blogger",
@@ -405,12 +413,18 @@ window.CV_DATA = {
     {
       year: "2023 - Present",
       title: "PhD Organization Nijmegen",
-      venue: "Se",
-      link:"https://blog.donders.ru.nl/author/siddharth/?lang=en",
-      linkLabel: "My blogs"
+      venue: "Secretary (2023-2025), Education Committee (2024-2025), Social Commitee (2025- Present)",
+      description: "Managing email communications, planning hikes, organizing PhD Days (2024, 2025) focusing on sustainable careers and scientific communication",
+      link:"https://www.ru.nl/en/departments/resources/phd-organisation-nijmegen",
+      linkLabel: "Website"
     },
-    
-    
-    
+    {
+      year: "2023 - 2025",
+      title: "DBI2 Young Talent Council",
+      venue: "Work Package 2 represesntative",
+      description: "Organizing the DBI2 training weeks (2024, 2025), representing PhDs and Postdocs at steering committe meetings",
+      link:"https://dbi2.nl/",
+      linkLabel: "Website"
+    }    
   ]
 };
