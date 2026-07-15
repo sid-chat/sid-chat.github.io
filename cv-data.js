@@ -10,7 +10,7 @@ window.CV_DATA = {
   location: "",
   shortSummary: "I build and analyze efficient computational models of complex adaptive systems.",
   about: `Namaste and welcome to my website.
-  I am a mechanical and control engineer who began doing a PhD in the field of AI and is now concluding it in the field of complex systems. I am currently part of the <a href="https://dbi2.nl/" target="_blank" rel="noreferrer">Dutch Brain Interface Initiative (DBI2)</a> consortium and am supervised by <a href="https://www.ru.nl/en/people/gerven-m-van" target="_blank" rel="noreferrer">Prof. Marcel van Gerven</a>.
+  I am a mechanical and control engineer who began doing a PhD in the field of AI and is now concluding it in the field of complex systems. I am currently part of the <a href="https://dbi2.nl/" target="_blank" rel="noreferrer">Dutch Brain Interface Initiative (DBI2)</a> consortium and am supervised by  <a href="https://elgazzarr.github.io/" target="_blank" rel="noreferrer">Dr. Ahmed El-Gazzar</a> and<a href="https://www.ru.nl/en/people/gerven-m-van" target="_blank" rel="noreferrer">Prof. Marcel van Gerven</a>.
   `,
   links: [
     { label: "Email", url: "mailto:siddharth.chaturvedi@donders.ru.nl" },
@@ -136,7 +136,7 @@ window.CV_DATA = {
     {
       year: "2026",
       title: "Role differentiation in a shared-resource ecology under multi-level selection",
-      authors: "Siddharth Chaturvedi, Ahmed, El-Gazzar, Marcel van Gerven",
+      authors: "Siddharth Chaturvedi, Ahmed El-Gazzar, Marcel van Gerven",
       venue: "Artificial Life, 2026, (Accepted)",
       description:
         "Agent-based model to study role differentiation, resource use, and group-level selection in a shared-resource ecology.",
@@ -146,7 +146,7 @@ window.CV_DATA = {
     {
       year: "2025",
       title: "Emergence of Internal State-Modulated Swarming in Multi-Agent Patch Foraging System",
-      authors: "Siddharth Chaturvedi, Ahmed, El-Gazzar, Marcel van Gerven",
+      authors: "Siddharth Chaturvedi, Ahmed El-Gazzar, Marcel van Gerven",
       venue: "GECCO, 2026 (Accepted)",
       description: "A model showing that swarming in partially-observable multi-agent patch foraging systems depends on the internal state representing the virtual hunger or resource levels of the foragers",
       link: "https://arxiv.org/pdf/2510.18886",
@@ -155,7 +155,7 @@ window.CV_DATA = {
     {
       year: "2025",
       title: "ABMax: A JAX-based Agent-based Modeling Framework",
-      authors: "Siddharth Chaturvedi, Ahmed, El-Gazzar, Marcel van Gerven",
+      authors: "Siddharth Chaturvedi, Ahmed El-Gazzar, Marcel van Gerven",
       venue: "EUROSIM, 2026 (Accepted)",
       description: "An efficient and scalable agent-based modelling framework based on JAX that can handle dynamic population size and conflict management.",
       link: "https://arxiv.org/pdf/2508.16508",
@@ -164,7 +164,7 @@ window.CV_DATA = {
     {
       year: "2024",
       title: "A dynamical systems approach to optimal foraging",
-      authors: "Siddharth Chaturvedi, Ahmed, El-Gazzar, Marcel van Gerven",
+      authors: "Siddharth Chaturvedi, Ahmed El-Gazzar, Marcel van Gerven",
       venue: "PLOS Complex Systems",
       description: "A model formulating a CTRNN foraging from two resource patches as a continuous coupled dynamical system.",
       link: "https://journals.plos.org/complexsystems/article?id=10.1371/journal.pcsy.0000018",
